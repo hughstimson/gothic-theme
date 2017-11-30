@@ -1,11 +1,4 @@
-<?php ?>
-/**
-* Created by PhpStorm.
-* User: hstimson
-* Date: 2017-11-27
-* Time: 1:39 PM
-*/
-
+<?php /* Template Name: landing */ ?>
 <html>
 <head>
     <title>hughstimson.org</title>
@@ -26,14 +19,7 @@
         <a href="https://web.archive.org/web/20041206015037/http://www.sea-to-sky.net/">Sea to Sky Freenet</a>
 
     </p>
-    <p>Contact:<br>
-        Hugh Stimson<br>
-        1500 Remount Rd,
-        Front Royal VA 22630,
-        USA<br>
-        hugh * hughstimson * org<br>
-        1 (540) 635 6533</p>
-
+    
     <font size="-1">
         <table width="85%" cellpadding="17">
             <tr>
