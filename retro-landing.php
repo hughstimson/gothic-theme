@@ -8,19 +8,13 @@
 <div id="retro-container">
     <br>
     <p><b>hughstimson.org</b></p>
-    <img src="/web/20041206015037im_/http://hughstimson.org/star.70.png">
+    <img src="<?php bloginfo('template_url'); ?>/images/star.70.png" />
     <p>
-        <a href="https://web.archive.org/web/20041206015037/http://hughstimson.org/blog">weblog</a> |
-        <a href="https://web.archive.org/web/20041206015037/http://www.hughstimson.org/gallery/">photo gallery</a> |
-        <a href="https://web.archive.org/web/20041206015037/http://www.hughstimson.org/resume">resume</a>
+        <a href="<?php bloginfo('url'); ?>/blog">weblog</a> |
+        <a href="//twitter.com/hughstimson">twitter account</a> |
+        <a href="//essa.com">job</a> |
+        <a href="//geocology.ca">old job</a>
     </p>
-    <p>
-        <a href="https://web.archive.org/web/20041206015037/http://www.reservaloscedros.org/">Reserva Los Cedros
-            website</a> |
-        <a href="https://web.archive.org/web/20041206015037/http://www.sea-to-sky.net/">Sea to Sky Freenet</a>
-
-    </p>
-14
     <font size="-1">
         <table width="85%" cellpadding="17">
             <tr>
