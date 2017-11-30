@@ -56,4 +56,15 @@ function mf_page_excerpt_css() {
 	print '<style type="text/css">#excerpt{ height:10em; }</style>';
 }
 
+// Use a completely different CSS for the retro theme landing page
+
+add_filter('stylesheet_uri', 'my_stylesheet', 10, 2);
+
+function my_stylesheet($stylesheet_uri, $stylesheet_dir_uri){
+    if (is_page_template( 'retro-landing.php' ))
+        $stylesheet_uri = $stylesheet_dir_uri . '/retro.css';
+
+    return $stylesheet_uri;
+}
+
 ?>

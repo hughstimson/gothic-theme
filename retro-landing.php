@@ -1,10 +1,11 @@
-<?php /* Template Name: landing */ ?>
+<?php /* Template Name: retro-landing */ ?>
 <html>
 <head>
     <title>hughstimson.org</title>
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 </head>
 <body>
-<center>
+<div id="retro-container">
     <br>
     <p><b>hughstimson.org</b></p>
     <img src="/web/20041206015037im_/http://hughstimson.org/star.70.png">
@@ -19,7 +20,7 @@
         <a href="https://web.archive.org/web/20041206015037/http://www.sea-to-sky.net/">Sea to Sky Freenet</a>
 
     </p>
-    
+14
     <font size="-1">
         <table width="85%" cellpadding="17">
             <tr>
@@ -109,7 +110,7 @@
                         <p>Was it me said you were crazy?<br>
                             -- <i>Kate Bush, <u>Rocket's Tail</u></i></p>
         </table>
-</center>
+</div>
 </font>
 </body>
 </html>
