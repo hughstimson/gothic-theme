@@ -1,3 +1,31 @@
-#retro-container {
+div#retro-container {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 3em;
+}
+
+div#retro-masthead-div {
     text-align: center;
+}
+
+h1#retro-title-h1 {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+div.retro-quote-div {
+    margin-top: 3em;
+    font-size: 0.9em;
+}
+
+div.retro-content-div {
+}
+
+div.retro-citation-div {
+    margin-top: 1em;
+    font-style: italic;
+}
+
+span.retro-title-span {
+    text-decoration: underline;
 }
