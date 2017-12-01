@@ -16,13 +16,16 @@ h1#retro-title-h1 {
 div.retro-quote-div {
     margin-top: 3em;
     font-size: 0.9em;
+    padding-right: 15px;  /* Hack until I've made a custom Bootstrap with wider grid spacers. */
 }
 
 div.retro-content-div {
+    /*     text-align: justify;
+        text-justify: distribute; */
 }
 
 div.retro-citation-div {
-    margin-top: 1em;
+    margin-top: 0.5em;
     font-style: italic;
 }
 
