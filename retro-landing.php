@@ -26,17 +26,6 @@
     </div>
     <div class="row">
         <div class="retro-quote-div col-12 col-md-6">
-            <div class="retro-content-div">Civilizations in decline are consistently characterized by a tendency
-                toward standardization and uniformity. Conversely, during the growth
-                stage of civilization, the tendency is toward differentiation and
-                diversity.
-            </div>
-            <div class="retro-citation-div">
-                &mdash; Arnold Toynbee, <span class="retro-title-span">A Study of History</span>
-            </div>
-        </div>
-
-        <div class="retro-quote-div col-12 col-md-6">
             <div class="retro-content-div">We have to learn what we can, but remain mindful that our knowledge not
                 close the
                 circle,
@@ -46,6 +35,17 @@
             </div>
             <div class="retro-citation-div">&mdash; Stone Telling, <span
                         class="retro-title-span">Always Coming Home</span>, Ursula K. Leguin
+            </div>
+        </div>
+
+        <div class="retro-quote-div col-12 col-md-6">
+            <div class="retro-content-div">Civilizations in decline are consistently characterized by a tendency
+                toward standardization and uniformity. Conversely, during the growth
+                stage of civilization, the tendency is toward differentiation and
+                diversity.
+            </div>
+            <div class="retro-citation-div">
+                &mdash; Arnold Toynbee, <span class="retro-title-span">A Study of History</span>
             </div>
         </div>
 
@@ -63,19 +63,6 @@
                 research.
             </div>
             <div class="retro-citation-div">&mdash; Albert Einstein</div>
-        </div>
-
-        <div class="retro-quote-div col-12 col-md-6">
-            <div class="retro-content-div">Very frankly, I am opposed to people being programmed by others.
-                My whole approach in
-                broadcasting has always been 'You are an important person just the way you are. You can make
-                healthy decisions.' Maybe I'm going on too long, but I just feel that anything that allows a
-                person to be more active in the control of his or her life, in a healthy way, is
-                important.
-            </div>
-            <div class="retro-citation-div">&mdash; From Fred (Mr.) Rogers testimony to the
-                Supreme Court in defense of fair use copying in the Sony Betamax case
-            </div>
         </div>
 
         <div class="retro-quote-div col-12 col-md-6">
@@ -98,7 +85,7 @@
             </div>
             <div class="retro-citation-div">&mdash; John Cage</div>
         </div>
-
+        
         <div class="retro-quote-div col-12 col-md-6">
             <div class="retro-content-div">It is an ultimate act of rudeness to find fault with
                 anything which is given to us in a
@@ -118,7 +105,7 @@
             </div>
             <div class="retro-citation-div">&mdash; Philip Roth</div>
         </div>
-
+        
         <div class="retro-quote-div col-12 col-md-6">
             <div class="retro-content-div">He almost waved away the tangible beauty of
                 the hour like a crowd of persistent
@@ -129,7 +116,7 @@
             <div class="retro-citation-div">&mdash; Boris Pasternak, <span
                         class="retro-title-span">Doctor Zhivago</span></div>
         </div>
-
+        
         <div class="retro-quote-div col-12 col-md-6">
             <div class="retro-content-div">'One whom the dragons will speak with,'
                 he said, 'that is a
@@ -141,12 +128,6 @@
             <div class="retro-citation-div">&mdash; Ged, <span class="retro-title-span">The Tombs of Atuan</span>
                 , Ursula K Le Guin
             </div>
-        </div>
-
-        <div class="retro-quote-div col-12 col-md-6">
-            <div class="retro-content-div">Was it me said you were crazy?</div>
-            <div class="retro-citation-div">&mdash; Kate Bush, <span
-                        class="retro-title-span">Rocket's Tail</span></div>
         </div>
     </div>
 </div>
