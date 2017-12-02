@@ -3,8 +3,11 @@
     padding: 0;
 }
 
+div#retro-container h1 {
+    margin: 2.8em 0 0 0;
+}
+
 div#retro-container p,
-div#retro-container h1,
 div#retro-container img {
     margin: 1.4em 0 0 0;
 }
