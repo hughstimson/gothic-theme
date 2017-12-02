@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div#retro-container p,
+div#retro-container h1,
+div#retro-container img {
+    margin: 1.4em 0 0 0;
+}
+
+div#retro-container {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 3em;
+}
+
+div#retro-masthead-div {
+    text-align: center;
+}
+
+div#retro-container h1 {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+div.retro-quote-div {
+    padding: 3em 2em 0 2em;
+    font-size: 1em;
+}
+
+/* Optional, to make the centre gutter wider:
+
+@media (min-width: 768px) {
+    div.retro-quote-div:nth-child(odd) {
+        padding-right: 2.5em;
+    }
+
+    div.retro-quote-div:nth-child(even) {
+        padding-left: 2.5em;
+    }
+}
+*/
+
+div.retro-content-div {
+    /*     text-align: justify;
+        text-justify: distribute; */
+}
+
+div.retro-citation-div {
+    margin-top: 1.4em;
+    font-style: italic;
+}
+
+span.retro-title-span {
+    text-decoration: underline;
+}
