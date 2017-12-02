@@ -54,7 +54,7 @@
                 the
                 inlet port is uncovered and thus the cycle is completed and repeated.
             </div>
-            <div class="retro-citation-div">&mdash; from "The Two Stroke Engine", <span class="retro-title-span">Haynes Motorcyle Basics Techbook</span>
+            <div class="retro-citation-div">&mdash; "The Two Stroke Engine", <span class="retro-title-span">Haynes Motorcyle Basics Techbook</span>
             </div>
         </div>
 
