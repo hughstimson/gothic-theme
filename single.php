@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="row">
 	<div class="sideBar">		
-			<h1 class="backLink"><a href="<?php bloginfo('url'); ?>"><span class="navArrow">&larr;</span>  blog</a></h1>
+			<h1 class="backLink"><a href="<?php bloginfo('url'); ?>/blog"><span class="navArrow">&larr;</span>  blog</a></h1>
 	</div><!--sideBar-->
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
 				<div class="contentWithSidebar post" id="post-<?php the_ID(); ?>">
