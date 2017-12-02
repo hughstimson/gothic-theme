@@ -1,3 +1,8 @@
+* {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 div#retro-container {
     font-size: 16px;
     line-height: 1.4;
@@ -8,9 +13,13 @@ div#retro-masthead-div {
     text-align: center;
 }
 
-h1#retro-title-h1 {
+div#retro-container h1 {
     font-weight: bold;
     font-size: 1em;
+}
+
+div#retro-container p {
+    margin: 1.4em 0 0 0;
 }
 
 div.retro-quote-div {
