@@ -14,8 +14,9 @@
             <h1 id="retro-title-h1">hughstimson.org</h1>
             <img src="<?php bloginfo('template_url'); ?>/images/star.70.png"/>
             <p>
-                <a href="<?php bloginfo('url'); ?>/blog">weblog</a> |
-                <a href="//twitter.com/hughstimson">twitter account</a>
+                <a href="//twitter.com/hughstimson">twitter account</a> |
+                <a href="<?php bloginfo('url'); ?>/blog">weblog</a>
+
             </p>
             <p>
                 <a href="//ca.linkedin.com/in/hughstimson">resume</a> |
