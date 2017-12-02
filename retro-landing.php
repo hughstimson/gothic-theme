@@ -59,9 +59,7 @@
         </div>
 
         <div class="retro-quote-div col-12 col-lg-6">
-            <div class="retro-content-div">If we knew what it was were doing, it wouldn't be called
-                research.
-            </div>
+            <div class="retro-content-div">If we knew what it was we were doing, it would not be called research.</div>
             <div class="retro-citation-div">&mdash; Albert Einstein</div>
         </div>
 
