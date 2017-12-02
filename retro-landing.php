@@ -119,9 +119,7 @@
             <div class="retro-content-div">'One whom the dragons will speak with,'
                 he said, 'that is a
                 dragonlord, or at least that is the center of the matter. It's not a
-                trick of mastering the dragons, as most people think. Dragons have
-                no
-                masters.'
+                trick of mastering the dragons, as most people think.'
             </div>
             <div class="retro-citation-div">&mdash; Ged, <span class="retro-title-span">The Tombs of Atuan</span>
                 , Ursula K Le Guin
