@@ -99,7 +99,7 @@
 
         <div class="retro-quote-div col-12 col-lg-6">
             <div class="retro-content-div">Life is not ever either or. It's and and and and
-                and."
+                and.
             </div>
             <div class="retro-citation-div">&mdash; Philip Roth</div>
         </div>
