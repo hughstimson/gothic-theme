@@ -34,8 +34,8 @@ div.retro-quote-div {
 
 @media (max-width: 768px) {
     div.retro-quote-div {
-        padding-right: 0.7em;
-        padding-left: 0.7em;
+        padding-right: 0;
+        padding-left: 0;
     }
 }
 
