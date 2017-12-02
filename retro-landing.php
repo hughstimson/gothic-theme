@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="retro-quote-div col-12 col-md-6">
+        <div class="retro-quote-div col-12 col-lg-6">
             <div class="retro-content-div">We have to learn what we can, but remain mindful that our knowledge not
                 close the
                 circle,
@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <div class="retro-quote-div col-12 col-md-6">
+        <div class="retro-quote-div col-12 col-lg-6">
             <div class="retro-content-div">Civilizations in decline are consistently characterized by a tendency
                 toward standardization and uniformity. Conversely, during the growth
                 stage of civilization, the tendency is toward differentiation and
@@ -49,7 +49,7 @@
             </div>
         </div>
 
-        <div class="retro-quote-div col-12 col-md-6">
+        <div class="retro-quote-div col-12 col-lg-6">
             <div class="retro-content-div">As the piston continues to rise, creating vacuum in the crankcase,
                 the
                 inlet port is uncovered and thus the cycle is completed and repeated.
@@ -58,14 +58,14 @@
             </div>
         </div>
 
-        <div class="retro-quote-div col-12 col-md-6">
+        <div class="retro-quote-div col-12 col-lg-6">
             <div class="retro-content-div">If we knew what it was were doing, it wouldn't be called
                 research.
             </div>
             <div class="retro-citation-div">&mdash; Albert Einstein</div>
         </div>
 
-        <div class="retro-quote-div col-12 col-md-6">
+        <div class="retro-quote-div col-12 col-lg-6">
             <div class="retro-content-div">
                 What kind of world is it<br>
                 Comes headlong at you and swerves at the last possible second?<br>
@@ -76,7 +76,7 @@
             </div>
         </div>
 
-        <div class="retro-quote-div col-12 col-md-6">
+        <div class="retro-quote-div col-12 col-lg-6">
             <div class="retro-content-div">I certainly had no feeling for harmony, and Schoenberg
                 thought that
                 that would make it impossible for me to write music. He said, 'You'll
@@ -86,7 +86,7 @@
             <div class="retro-citation-div">&mdash; John Cage</div>
         </div>
         
-        <div class="retro-quote-div col-12 col-md-6">
+        <div class="retro-quote-div col-12 col-lg-6">
             <div class="retro-content-div">It is an ultimate act of rudeness to find fault with
                 anything which is given to us in a
                 spirit of love. So a modern, secular education is often painful. By it's very
@@ -99,14 +99,14 @@
                     Sunday</span></div>
         </div>
 
-        <div class="retro-quote-div col-12 col-md-6">
+        <div class="retro-quote-div col-12 col-lg-6">
             <div class="retro-content-div">Life is not ever either or. It's and and and and
                 and."
             </div>
             <div class="retro-citation-div">&mdash; Philip Roth</div>
         </div>
         
-        <div class="retro-quote-div col-12 col-md-6">
+        <div class="retro-quote-div col-12 col-lg-6">
             <div class="retro-content-div">He almost waved away the tangible beauty of
                 the hour like a crowd of persistent
                 friends,
@@ -117,7 +117,7 @@
                         class="retro-title-span">Doctor Zhivago</span></div>
         </div>
         
-        <div class="retro-quote-div col-12 col-md-6">
+        <div class="retro-quote-div col-12 col-lg-6">
             <div class="retro-content-div">'One whom the dragons will speak with,'
                 he said, 'that is a
                 dragonlord, or at least that is the center of the matter. It's not a
