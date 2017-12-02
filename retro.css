@@ -33,15 +33,7 @@ div.retro-quote-div {
 }
 
 @media (max-width: 768px) {
-
-    div.container {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
     div.retro-quote-div {
-        margin-right: 0;
-        margin-left: 0;
         padding-right: 0.7em;
         padding-left: 0.7em;
     }
