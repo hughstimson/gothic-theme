@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>hughstimson.org</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet"
           href="<?php bloginfo('template_url'); ?>/lib/bootstrap-4.0.0-beta.2-dist/css/bootstrap-grid.min.css"
           type="text/css" media="screen">
