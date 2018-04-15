@@ -31,21 +31,23 @@
 		<img width="63" height="32" src="<?php bloginfo('template_url'); ?>/images/flag.png" /><span id="hughstimson">hughStimson</span><span id="org">.org</span>
 		</a>
 	</div>
-    <!--
+
 	<div id="siteNav">
 		<a
 			<?php if (is_home()) { echo " id=\"current\""; } ?>
-			href="<?php bloginfo('url'); ?>">blog</a>
+			href="<?php bloginfo('url'); ?>/blog">blog</a>
 		<a
-			<?php if (is_page('projects')) { echo " id=\"current\""; } ?>
-			href="<?php bloginfo('url'); ?>/projects">projects</a>
-		<a
+			<?php if (is_page('radio')) { echo " id=\"current\""; } ?>
+			href="<?php bloginfo('url'); ?>/projects/radio">radio</a>
+        <?php /*
+        <a
 			<?php if (is_page('gallery')) { echo " id=\"current\""; } ?>
 			href="<?php bloginfo('url'); ?>/photos">photos</a>
 		<a
 			<?php if (is_page('about')) { echo " id=\"current\""; } ?>
 			href="<?php bloginfo('url'); ?>/about">about</a>
+	    */ ?>
 	</div>
-    -->
+
 	<div class="clear"> </div>
 </div><!--banner row-->
