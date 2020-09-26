@@ -731,6 +731,10 @@ img#feed {
   	margin-bottom: 16px;
 }
 
+ul.radio-data {
+	display: none;
+}
+
 /* about --------------------------------------------------------- */
 
 #contact.sideBar {
