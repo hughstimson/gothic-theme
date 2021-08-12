@@ -711,13 +711,29 @@ img#feed {
 	border-style: none;
 	}
 
-#audioplayer1 {
-	margin-left: 10px;
-	}
-
 #hostProfiles.sideBar p {
 	margin-top: 0;
 	}
+
+/* For the Wordpress built-in audio player.
+.mejs-container.wp-audio-shortcode.mejs-audio {
+	height: 4px !important;
+}
+*/
+
+/* For the native audio controls */
+.audio-player {
+	width: 100%
+}
+
+.playlist-link-container, .audio-download-container {
+	font-size: 18px;
+  	margin-bottom: 16px;
+}
+
+ul.radio-data {
+	display: none;
+}
 
 /* about --------------------------------------------------------- */
 
