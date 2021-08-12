@@ -737,7 +737,9 @@ ul.radio-data {
 }
 
 table.radio-playlist {
-	font-size: 14px;
+	font-size: 16px;
+	margin-bottom: 18px;
+	margin-top: 18px;
 }
 
 table.radio-playlist thead {
@@ -751,7 +753,11 @@ table.radio-playlist td {
 }
 
 table.radio-playlist td.radio-playlist-playtime {
-	white-space: nowrap
+	white-space: nowrap;
+}
+
+table.radio-playlist tbody td.radio-playlist-playtime {
+	font-style: italic;
 }
 
 table.radio-playlist td.radio-playlist-label {
