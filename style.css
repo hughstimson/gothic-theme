@@ -69,7 +69,8 @@ h3,
 .gbSystemLinks,
 .block-core-Navigator,
 .sizeSelector,
-.zpAdminLinks {
+.zpAdminLinks,
+table.radio-playlist {
 	font-size: 15px;
 	line-height: 26px;
 	font-family:
@@ -732,6 +733,28 @@ img#feed {
 }
 
 ul.radio-data {
+	display: none;
+}
+
+table.radio-playlist {
+	font-size: 14px;
+}
+
+table.radio-playlist thead {
+	font-weight: bolder;
+}
+
+table.radio-playlist td {
+	vertical-align: top;
+	padding-right: 14px;
+	padding-bottom: 5px;
+}
+
+table.radio-playlist td.radio-playlist-playtime {
+	white-space: nowrap
+}
+
+table.radio-playlist td.radio-playlist-label {
 	display: none;
 }
 
