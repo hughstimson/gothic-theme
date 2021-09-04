@@ -126,6 +126,13 @@
             <div class="retro-citation-div">&mdash; Ged, <span class="retro-title-span">The Tombs of Atuan</span>
                 , Ursula K Le Guin
             </div>
+	<span id="test"></span>
+        </div>
+        <div class="retro-quote-div col-12 col-lg-6">
+            <div class="retro-content-div">He knew the difference between knowing the name of something and knowing something.
+            </div>
+            <div class="retro-citation-div">&mdash; Richard Feynman, interview.
+            </div>
         </div>
     </div>
 </div>
