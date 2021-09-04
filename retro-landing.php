@@ -64,18 +64,6 @@
             <div class="retro-content-div">If we knew what it was we were doing, it would not be called research.</div>
             <div class="retro-citation-div">&mdash; Albert Einstein</div>
         </div>
-
-        <div class="retro-quote-div col-12 col-lg-6">
-            <div class="retro-content-div">
-                What kind of world is it<br>
-                Comes headlong at you and swerves at the last possible second?<br>
-                It's this one.<br>
-                Well it's this one.<br>
-            </div>
-            <div class="retro-citation-div">&mdash; The Mountain Goats, <span class="retro-title-span">Song for Dana Plato</span>
-            </div>
-        </div>
-
         <div class="retro-quote-div col-12 col-lg-6">
             <div class="retro-content-div">I certainly had no feeling for harmony, and Schoenberg
                 thought that
@@ -105,18 +93,6 @@
             </div>
             <div class="retro-citation-div">&mdash; Philip Roth</div>
         </div>
-        
-        <div class="retro-quote-div col-12 col-lg-6">
-            <div class="retro-content-div">He almost waved away the tangible beauty of
-                the hour like a crowd of persistent
-                friends,
-                almost said to the lingering afterglow: 'Thank you, thank you, I'll be
-                all right.'
-            </div>
-            <div class="retro-citation-div">&mdash; Boris Pasternak, <span
-                        class="retro-title-span">Doctor Zhivago</span></div>
-        </div>
-        
         <div class="retro-quote-div col-12 col-lg-6">
             <div class="retro-content-div">'One whom the dragons will speak with,'
                 he said, 'that is a
