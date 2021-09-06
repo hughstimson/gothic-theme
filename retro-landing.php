@@ -111,7 +111,7 @@
         <div class="retro-quote-div col-12 col-lg-6">
             <div class="retro-content-div">He knew the difference between knowing the name of something and knowing something. Which I learned early on.
             </div>
-            <div class="retro-citation-div">&mdash; Richard Feynman, referring to his father, interview.
+            <div class="retro-citation-div">&mdash; Richard Feynman, referring to his father.
             </div>
         </div>
     </div>
