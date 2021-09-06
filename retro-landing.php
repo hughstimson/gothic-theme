@@ -102,7 +102,11 @@
             <div class="retro-citation-div">&mdash; Ged, <span class="retro-title-span">The Tombs of Atuan</span>
                 , Ursula K Le Guin
             </div>
-	<span id="test"></span>
+        </div>
+        <div class="retro-quote-div col-12 col-lg-6">
+            <div class="retro-content-div">A superior pilot uses his superior judgment to avoid situations which require the use of his superior skill.
+            </div>
+            <div class="retro-citation-div">&mdash; Frank Borman, astronaut</div>
         </div>
         <div class="retro-quote-div col-12 col-lg-6">
             <div class="retro-content-div">He knew the difference between knowing the name of something and knowing something. Which I learned early on.
