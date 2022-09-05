@@ -109,7 +109,7 @@
             <div class="retro-citation-div">&mdash; Frank Borman, astronaut</div>
         </div>
         <div class="retro-quote-div col-12 col-lg-6">
-            <div class="retro-content-div">He knew the difference between knowing the name of something and knowing something. Which I learned early on.
+            <div class="retro-content-div">He knew the difference between knowing the name of something and knowing something.
             </div>
             <div class="retro-citation-div">&mdash; Richard Feynman, referring to his father.
             </div>
