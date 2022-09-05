@@ -10,7 +10,7 @@ Template Name: djhugonaut
 		<div id="radioTitle" style="margin:0 0 10px 0;">dj Hugonaut</div>
 		<h1>Freeform music live on WCBN</h1>
 		<p>
-			 Fall 2006 Monday 9am; Winter 2007 to Fall 2008 Thur 1pm<br />
+			 Fall 2006 Monday 6am; Winter 2007 to Fall 2008 Thur 1pm<br />
 			 WCBN 88.3fm / wcbn.org / <a href="http://hughstimson.org/category/radio/feed"><img src="http://hughstimson.org/files/feed.png" id="feed">podcast</a><br />
 		</p>
 	</div>		
