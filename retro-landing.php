@@ -15,7 +15,7 @@
             <h1 id="retro-title-h1">hughstimson.org</h1>
             <img src="<?php bloginfo('template_url'); ?>/images/star.70.png"/>
             <p>
-                <a href="//mstdn.ca/@hughstimson">mastodon</a> |
+                <a href="https://mstdn.ca/@hughstimson" rel="me">mastodon</a> |
 		<a href="//twitter.com/hughstimson">twitter</a> |
                 <a href="<?php bloginfo('url'); ?>/blog">weblog</a>
 
