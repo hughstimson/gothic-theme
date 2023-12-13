@@ -16,7 +16,8 @@
             <img src="<?php bloginfo('template_url'); ?>/images/star.70.png"/>
             <p>
                 <a href="https://mstdn.ca/@hughstimson" rel="me">mastodon</a> |
-		<a href="//twitter.com/hughstimson">twitter</a> |
+		<!-- <a href="//twitter.com/hughstimson">twitter</a> | -->
+                <a href="twitter/">twitter archive</a> | 
                 <a href="<?php bloginfo('url'); ?>/blog">weblog</a>
 
             </p>
