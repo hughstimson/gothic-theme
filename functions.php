@@ -1,6 +1,14 @@
 <?php
 // activate optional per-category single post templates
-add_filter('single_template', create_function('$t', 'foreach( (array) get_the_category() as $cat ) { if ( file_exists(TEMPLATEPATH . "/single-{$cat->term_id}.php") ) return TEMPLATEPATH . "/single-{$cat->term_id}.php"; } return $t;' ));
+add_filter( 'single_template', function( $t ) {
+    foreach ( (array) get_the_category() as $cat ) {
+        if ( file_exists( get_template_directory() . "/single-{$cat->term_id}.php" ) ) {
+            return get_template_directory() . "/single-{$cat->term_id}.php";
+        }
+    }
+    return $t;
+} );
+
 
 // http://markjaquith.wordpress.com/2009/12/23/new-in-wordpress-2-9-post-thumbnail-images/
 add_theme_support( 'post-thumbnails' );
