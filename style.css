@@ -27,7 +27,6 @@ body {
 	border-width: 6px 0 0 0;
 	border-style: solid; 
 	border-color: black;
-	font-size: 10px;
 	}
 
 .row {
@@ -516,6 +515,13 @@ a.tweetBird:hover {
 .image a:active {
 	border-bottom: 0 none;
 	}
+
+.text pre {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 17px;
+	line-height: 1.6;
+}
 	
 /* topics -------------------------------------------------------- */
 
