@@ -19,7 +19,7 @@ get_header(); ?>
 <div class="row collapsibleSidebar">
 	<div class="sideBar" id="hostProfiles">
 		<h1>
-			<a href="<?php bloginfo('url'); ?>/projects"><h1>&larr; projects</h1></a>
+			<a href="<?php bloginfo('url'); ?>/projects/radio"><h1>&larr; radio</h1></a>
 		</h1>
 		<p> </p>
 		<h1>your hosts:</h1>

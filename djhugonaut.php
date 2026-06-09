@@ -16,7 +16,12 @@ Template Name: djhugonaut
 	</div>		
 </div> <!--radioHeader -->
 <div class="row collapsibleSidebar">
-	<?php query_posts('cat=14&posts_per_page=-1'); ?>	
+	<div class="sideBar" id="hostProfiles">
+		<h1>
+			<a href="<?php bloginfo('url'); ?>/projects/radio"><h1><span class="navArrow">&larr;</span> radio</h1></a>
+		</h1>
+	</div><!--sideBar-->
+	<?php query_posts('cat=14&posts_per_page=-1'); ?>
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
 				<div class="contentWithSidebar post" id="post-<?php the_ID(); ?>">
 					<div class="metadata">

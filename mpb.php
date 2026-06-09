@@ -18,7 +18,7 @@ Template Name: mpb
 <div class="row collapsibleSidebar">
 	<div class="sideBar" id="hostProfiles">
 		<h1>
-			<a href="<?php bloginfo('url'); ?>/projects"><h1><span class="navArrow">&larr;</span> projects</h1></a>
+			<a href="<?php bloginfo('url'); ?>/projects/radio"><h1><span class="navArrow">&larr;</span> radio</h1></a>
 		</h1>
 		<p> </p>
 		<p>
