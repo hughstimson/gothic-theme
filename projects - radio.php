@@ -4,7 +4,7 @@ Template Name: projects - radio
 */
 ?>
 <?php get_header(); ?>
-<div class="row">
+<div class="row collapsibleSidebar">
 	<div class="sideBar">
 			<h1 class="backLink"><a href="<?php bloginfo('url'); ?>/projects"><span class="navArrow">&larr;</span> back to projects</a></h1>
 	</div><!--sideBar-->

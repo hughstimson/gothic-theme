@@ -35,7 +35,9 @@ body {
 	/* gutter | sidebar | metadata | gap | content | gutter */
 	align-items: start;
 	max-width: 1070px;
-	min-width: 730px;
+	/* min-width prevents site links from sliding under hs.o banner, even when there's 4 such links.
+	   May want to remove if a narrow-width variant is implemented that intends for that sliding under to happen. */
+	min-width: 670px;
 	margin: 0 auto;
 	}
 
@@ -77,6 +79,76 @@ body {
 
 .contentWithDoubleSidebar {
 	grid-column: 5 / 6;
+	}
+
+/* intermediate-width variant (blog + project pages) ------------- */
+/* Below the full layout's 1070px max the content column starts to
+   shrink, so at this intermediate width drop the left sidebar and let
+   the metadata + content columns slide left into the freed space. The
+   content keeps its 50px right gutter, so its right edge stays aligned
+   with the banner's (the Radio link). Opt in per page by adding
+   "collapsibleSidebar" to the row. */
+@media (max-width: 1070px) {
+	.row.collapsibleSidebar {
+		grid-template-columns: 50px 0 120px 50px minmax(0, 1fr) 50px;
+		/* gutter | (sidebar removed) | metadata | gap | content | gutter */
+		}
+
+	.row.collapsibleSidebar .contentWithSidebar {
+		grid-template-columns: 120px 50px minmax(0, 1fr);
+		/* metadata | gap | content */
+		}
+
+	.row.collapsibleSidebar .sideBar {
+		display: none;
+		}
+
+	/* the metadata column shrinks to its content width (~120px); drop the
+	   bar's and thumbnail's 50px left indent so they fill it from the
+	   margin. Metadata text stays right-aligned (the bar, its leftmost
+	   element, lines up with the banner content). */
+	.row.collapsibleSidebar .metadata .bar,
+	.row.collapsibleSidebar img.attachment-post-thumbnail {
+		margin-left: 0;
+		}
+
+	/* individual radio project pages (mpb / dj Hugonaut / hotinhere):
+	   lay the header out as a flex row so the title/blurb sits beside the
+	   photo while there's room, and wraps beneath it once the row is too
+	   narrow for both (not forced while both fit). The posts below follow
+	   the article pattern via the content row's "collapsibleSidebar". */
+	#radioHeader {
+		display: flex;
+		flex-wrap: wrap;
+		box-sizing: border-box;
+		padding: 0 50px;
+		gap: 16px 50px;
+		}
+
+	/* the photo shrinks horizontally (cropped via object-fit, not squashed)
+	   from its natural width down to a square as the row narrows, reserving
+	   room for the title/blurb. Once it can't shrink any further the blurb
+	   wraps beneath it and the photo snaps back to its natural width.
+	   - 177px  = square min (≈ the photos' height)
+	   - 290px  = natural-width cap (the photos are ~288-298px wide)
+	   - 675px  = space reserved beside it (gap + the widest title's width,
+	              with slack so the shrink is stable before it wraps) */
+	#radioHeader > #hotinhereStaff {
+		flex: 1 0 auto;
+		box-sizing: border-box;
+		width: clamp(177px, calc(100% - 675px), 290px);
+		min-width: 177px;
+		max-width: 290px;
+		height: 177px;
+		object-fit: cover;
+		}
+
+	/* high flex-grow so the blurb (not the photo) soaks up free space while
+	   side by side, but the photo can still grow back to full width once the
+	   blurb has wrapped onto its own line */
+	#radioHeader > .contentWithDoubleSidebar {
+		flex: 9999 1 0;
+		}
 	}
 
 /* sitewide ------------------------------------------------------ */
@@ -390,7 +462,7 @@ ol ol {
 
 #siteNav {
 	float: right;
-	margin: 0 50px 0 30px;
+	margin: 0 50px 0 0;
 	padding-top: 0px;
 	text-transform: uppercase;
 	font-size: 30px;
@@ -430,7 +502,6 @@ ol ol {
 /* blog ---------------------------------------------------------- */
 
 .metadata {
-	width: 170px;
 	text-align: right;
 	color: black;
 	}

@@ -15,7 +15,7 @@ Template Name: djhugonaut
 		</p>
 	</div>		
 </div> <!--radioHeader -->
-<div class="row">
+<div class="row collapsibleSidebar">
 	<?php query_posts('cat=14&posts_per_page=-1'); ?>	
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
 				<div class="contentWithSidebar post" id="post-<?php the_ID(); ?>">

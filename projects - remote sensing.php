@@ -4,7 +4,7 @@ Template Name: projects - remote sensing
 */
 ?>
 <?php get_header(); ?>
-<div class="row">
+<div class="row collapsibleSidebar">
 	<div class="sideBar">
 			<h1 class="backLink"><a href="<?php bloginfo('url'); ?>/projects">&larr; back to projects</a></h1>
 	</div><!--sideBar-->
