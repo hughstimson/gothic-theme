@@ -33,7 +33,6 @@ body {
 	display: grid;
 	grid-template-columns: 50px 120px 170px 50px minmax(0, 1fr) 50px;
 	/* gutter | sidebar | metadata | gap | content | gutter */
-	grid-auto-flow: row dense;
 	align-items: start;
 	max-width: 1070px;
 	min-width: 730px;

@@ -19,7 +19,6 @@ Template Name: projects
 			<p>Some projects cross-posted at <a href="http://hughstimson.com/projects">hughstimson.com</a>.</p>
 	</div><!--sideBar-->
 	<!-- query from diceone http://wordpress.org/support/topic/297090#post-1186292 -->
-	<?php the_ID(); ?>
 	<?php $parent = $post->ID; ?>
 	<?php
 	query_posts('post_type=page&meta_key=topic&posts_per_page=-1'); 
