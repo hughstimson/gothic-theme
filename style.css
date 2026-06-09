@@ -30,27 +30,54 @@ body {
 	}
 
 .row {
+	display: grid;
+	grid-template-columns: 50px 120px 170px 50px minmax(0, 1fr) 50px;
+	/* gutter | sidebar | metadata | gap | content | gutter */
+	grid-auto-flow: row dense;
+	align-items: start;
 	max-width: 1070px;
 	min-width: 730px;
 	margin: 0 auto;
-	overflow: normal;
+	}
+
+/* the banner keeps its own (non-grid) layout */
+#banner.row {
+	display: block;
+	}
+
+/*  Catch-all so any unanticipated element in a row lands in the main content column
+    rather than breaking out into the gutter. */
+.row > * {
+	grid-column: 5 / 6;
 	}
 
 .sideBar {
+	grid-column: 2 / 3;
+	grid-row: 1 / span 9999;
+	/* span all rows so a tall sidebar overlaps the content stack
+	   (as the original float did) instead of inflating the first row */
 	width: 120px;
-	margin-left: 50px;
-	float: left;
 	text-align: left;
 	}
 
 .contentWithSidebar {
-	margin-left: 170px;
-	margin-right: 50px;
+	grid-column: 3 / 6;
+	display: grid;
+	grid-template-columns: 170px 50px minmax(0, 1fr);
+	/* metadata | gap | content */
+	align-items: start;
 	}
 
-.contentWithDoubleSidebar { 
-	margin-left: 390px;
-	margin-right: 50px;
+.contentWithSidebar > * {
+	grid-column: 3;
+	}
+
+.contentWithSidebar > .metadata {
+	grid-column: 1;
+	}
+
+.contentWithDoubleSidebar {
+	grid-column: 5 / 6;
 	}
 
 /* sitewide ------------------------------------------------------ */
@@ -212,11 +239,6 @@ h4 {
 	list-style-type: lower-alpha;
 }
 	
-.entry, 
-.comment {
-	margin-left: 220px;
-	}
-
 .text a {
 	border-bottom: 1px solid #3AA9C7;
 	}
@@ -405,7 +427,6 @@ ol ol {
 /* blog ---------------------------------------------------------- */
 
 .metadata {
-	float: left;
 	width: 170px;
 	text-align: right;
 	color: black;
@@ -465,6 +486,12 @@ blockquote {
 
 .post .text {
 	margin-bottom: 0px;
+	}
+
+/* grid items form a BFC, so the last line's bottom margin no longer
+   collapses into .post's margin-bottom; drop it to keep spacing identical */
+.post .text > :last-child {
+	margin-bottom: 0;
 	}
 
 .post {
@@ -585,6 +612,15 @@ ul.topics a:hover {
 
 /* comments thread ----------------------------------------------- */
 
+/* let the comment blocks join the row grid */
+#commentThread {
+	display: contents;
+	}
+
+.navigation {
+	grid-column: 5 / 6;
+	}
+
 #commentThread .text p {
 	font-size: 16px;
 	}
@@ -639,12 +675,17 @@ color: black;
 /* projects ------------------------------------------------------ */
 
 .project .description {
-	margin-left: 220px;
 	margin-bottom: 50px;
 	}
 
+/* project thumbnail: either an <a> wrapper (projects index) or a bare
+   <img> (per-topic project lists) */
+.project > a,
+.project > img.attachment-post-thumbnail {
+	grid-column: 1;
+	}
+
 img.attachment-post-thumbnail {
-	float: left;
 	background-color: lightgrey;
 	margin: 0 0 0 50px;
 	}
@@ -686,9 +727,7 @@ a:hover > img.attachment-post-thumbnail {
 	}
 
 img#hotinhereStaff {
-	float: left;
-	margin-left: 50px;
-	text-align: right;
+	grid-column: 2 / 5;
 	border: 1px solid darkgrey;
 	}
 
@@ -773,7 +812,7 @@ table.radio-playlist td.radio-playlist-label {
 /* about --------------------------------------------------------- */
 
 #contact.sideBar {
-	margin-left: 0;
+	grid-column: 3 / 4;
 	width: 170px;
 	text-align: right;
 	}
