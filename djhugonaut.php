@@ -17,9 +17,7 @@ Template Name: djhugonaut
 </div> <!--radioHeader -->
 <div class="row collapsibleSidebar narrow">
 	<div class="sideBar" id="hostProfiles">
-		<h1>
-			<a href="<?php bloginfo('url'); ?>/projects/radio"><h1><span class="navArrow">&larr;</span> radio</h1></a>
-		</h1>
+		<h1 class="backLink"><a href="<?php bloginfo('url'); ?>/projects/radio"><span class="navArrow">&larr;</span> radio</a></h1>
 	</div><!--sideBar-->
 	<?php query_posts('cat=14&posts_per_page=-1'); ?>
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	

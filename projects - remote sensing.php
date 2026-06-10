@@ -39,7 +39,6 @@ Template Name: projects - remote sensing
 			</div><!--descrtiption-->
 		</div><!-- project -->	
 	<?php endwhile; ?>
-	</div>	
 	<div class="contentWithDoubleSidebar" id="postsNav">
 		<h1><?php posts_nav_link(' &#183; ', '&larr; newer projects', 'older projects &rarr;'); ?></h1>
 	</div>

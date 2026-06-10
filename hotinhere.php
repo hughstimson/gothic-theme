@@ -13,14 +13,11 @@ get_header(); ?>
 			<a href="http://feeds.feedburner.com/hotinhere"><img src="http://hughstimson.org/files/feed.png" id="feed">podcast</a> / 88.3fm / <a href="http://wcbn.org">wcbn.org</a><br />
 			<a href="mailto:hotinhere.radio@gmail.com">hotinhere.radio@gmail.com</a>
 		</p>
-		</p>
 	</div>		
 </div> <!--radioHeader -->
 <div class="row collapsibleSidebar narrow">
 	<div class="sideBar" id="hostProfiles">
-		<h1>
-			<a href="<?php bloginfo('url'); ?>/projects/radio"><h1>&larr; radio</h1></a>
-		</h1>
+		<h1 class="backLink"><a href="<?php bloginfo('url'); ?>/projects/radio"><span class="navArrow">&larr;</span> radio</a></h1>
 		<p> </p>
 		<h1>your hosts:</h1>
 		<p>host profiles will show up here real soon</p>

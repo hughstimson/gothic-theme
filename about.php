@@ -19,7 +19,7 @@ Template Name: about
 		<a href="http://hughstimson.org/photos/sprucelake/self+portrait+with+alpine.jpg.php" alt="mugshot" title="self portrait with alpine"><img src="<?php bloginfo('template_url'); ?>/images/alpineprofile.jpg" /></a>
 		<p><a href="mailto:hugh@hughstimson.org">hugh@hughstimson.org</a></p>
 		<p>604.440.1989 (new!)</p>
-		<p><a href="https://twitter.com/#!/hughstimson">@hughstimson</a>
+		<p><a href="https://twitter.com/#!/hughstimson">@hughstimson</a></p>
 		<p>1155 Union St<br /> 
 		Vancouver BC<br />
 		V6A 2C7</p>

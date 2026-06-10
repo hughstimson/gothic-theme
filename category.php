@@ -2,7 +2,7 @@
 <div class="row collapsibleSidebar narrow">
 	<div class="sideBar">
 			<h1 class="backLink"><a href="<?php bloginfo('url'); ?>">&larr; back to blog</a></h1>
-			<p>showing posts in <span class="topics"><?php single_cat_title(); ?></p>
+			<p>showing posts in <span class="topics"><?php single_cat_title(); ?></span></p>
 	</div><!--sideBar-->
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
 				<div class="contentWithSidebar post" id="post-<?php the_ID(); ?>">

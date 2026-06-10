@@ -17,9 +17,7 @@ Template Name: mpb
 </div> <!--radioHeader -->
 <div class="row collapsibleSidebar narrow">
 	<div class="sideBar" id="hostProfiles">
-		<h1>
-			<a href="<?php bloginfo('url'); ?>/projects/radio"><h1><span class="navArrow">&larr;</span> radio</h1></a>
-		</h1>
+		<h1 class="backLink"><a href="<?php bloginfo('url'); ?>/projects/radio"><span class="navArrow">&larr;</span> radio</a></h1>
 		<p> </p>
 		<p>
 			The good folks at CIDO let me take over the radio while I was in town for a treeplanting contract.

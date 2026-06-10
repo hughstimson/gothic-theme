@@ -42,7 +42,7 @@ Template Name: projects
 					<?php
 						$mykey_values = get_post_custom_values('topic');
 						foreach ( $mykey_values as $key => $value ) {
-							echo "$value, </li>"; 
+							echo "<li>$value, </li>";
 						}
 					?>
 				</ul>
