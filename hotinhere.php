@@ -16,7 +16,7 @@ get_header(); ?>
 		</p>
 	</div>		
 </div> <!--radioHeader -->
-<div class="row collapsibleSidebar">
+<div class="row collapsibleSidebar narrow">
 	<div class="sideBar" id="hostProfiles">
 		<h1>
 			<a href="<?php bloginfo('url'); ?>/projects/radio"><h1>&larr; radio</h1></a>

@@ -4,7 +4,7 @@ Template Name: about
 */
 ?>
 <?php get_header(); ?>
-<div class="row">
+<div class="row collapsibleSidebar narrow">
 	<div class="sideBar">
 		<div class="pageNav">
 			<h1><a href="#blurb">Blurb</a></h1>
@@ -14,16 +14,17 @@ Template Name: about
 <!--			<h1><a href="#flag">Flag</a></h1> -->
 		</div><!--pageNav--> 
 	</div><!--sidebar-->
-	<div class="sideBar" id="contact">
+	<div class="contentWithSidebar">
+		<div class="metadata" id="contact">
 		<a href="http://hughstimson.org/photos/sprucelake/self+portrait+with+alpine.jpg.php" alt="mugshot" title="self portrait with alpine"><img src="<?php bloginfo('template_url'); ?>/images/alpineprofile.jpg" /></a>
 		<p><a href="mailto:hugh@hughstimson.org">hugh@hughstimson.org</a></p>
 		<p>604.440.1989 (new!)</p>
 		<p><a href="https://twitter.com/#!/hughstimson">@hughstimson</a>
 		<p>1155 Union St<br /> 
 		Vancouver BC<br />
-		V6A 2C7</p>	
-	</div><!--sideBar-->
-	<div class="contentWithDoubleSidebar"> 
+		V6A 2C7</p>
+		</div><!--contact metadata-->
+		<div class="entry">
 		<h2 id="blurb">Blurb</h2>
 		<div class="text">
 			<p>I'm an <a href="http://hughstimson.com">environmental GIS consultant</a> in Vancouver, Canada. I often collaborate with <a href="http://geomemes.com/">Geomemes Research</a> and <a href="http://mcallister-research.com/">McAllister Opinion Research</a>, and I'm interested in working with your gung-ho conservation organization.</p>
@@ -44,6 +45,7 @@ Template Name: about
 		<div class="text">
 			<p>This is a <a href="http://wordpress.org">Wordpress</a> site with a custom theme developed with the help of a heap of different WP nerds on WP forums. It's a new site, and I'll add more creation details soon.</p>
 		</div>
+		</div><!--entry-->
 	</div>
 </div><!--row-->
 <?php get_footer(); ?>

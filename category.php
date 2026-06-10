@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-<div class="row">
-	<div class="sideBar">		
+<div class="row collapsibleSidebar narrow">
+	<div class="sideBar">
 			<h1 class="backLink"><a href="<?php bloginfo('url'); ?>">&larr; back to blog</a></h1>
 			<p>showing posts in <span class="topics"><?php single_cat_title(); ?></p>
 	</div><!--sideBar-->
@@ -14,7 +14,7 @@
 						<ul class="topics">
 						<?php
 						foreach((get_the_category()) as $category) {
-							 if ($category->cat_name != 'Uncategorized') {echo '<a href="'. get_category_link( $category->term_id ).'" title="' . sprintf( __( "View all posts in %s" ), $category->name ).'"'.'><li>'.$category->name.'</li></a>'; } }
+							 if ($category->cat_name != 'Uncategorized') {echo '<li><a href="'. get_category_link( $category->term_id ).'" title="' . sprintf( __( "View all posts in %s" ), $category->name ).'"'.'>'.$category->name.'</a></li>'; } }
 						?>
 						</ul>
 						<div class="commentsLink">

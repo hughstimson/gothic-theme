@@ -4,7 +4,7 @@ Template Name: project
 */
 ?>
 <?php get_header(); ?>
-<div class="row collapsibleSidebar" id="projectPage">
+<div class="row collapsibleSidebar narrow" id="projectPage">
 	<div class="sideBar">		
 			<h1 class="backLink"><a href="<?php bloginfo('url'); ?>/projects"><span class="navArrow">&larr;</span> projects</a></h1>
 	</div><!--sideBar-->
@@ -25,7 +25,7 @@ Template Name: project
 						<?php
 							$mykey_values = get_post_custom_values('topic');
 							foreach ( $mykey_values as $key => $value ) {
-								echo "<li>$value, </li>"; 
+								echo "<li>$value</li>";
 							}
 						?>
 						</ul>

@@ -15,7 +15,7 @@ Template Name: djhugonaut
 		</p>
 	</div>		
 </div> <!--radioHeader -->
-<div class="row collapsibleSidebar">
+<div class="row collapsibleSidebar narrow">
 	<div class="sideBar" id="hostProfiles">
 		<h1>
 			<a href="<?php bloginfo('url'); ?>/projects/radio"><h1><span class="navArrow">&larr;</span> radio</h1></a>
