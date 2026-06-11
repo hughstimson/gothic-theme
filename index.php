@@ -33,9 +33,6 @@
 					</div>
 				</div><!-- entry -->
 				<?php trackback_rdf(); ?>
-				<div class="comments-thread">
-					<?php comments_template(); ?>
-				</div>
 			</div><!-- post -->
 		<!-- for all other (non-tweet) posts display the normal way -->
 		<?php } else { ?>
@@ -67,9 +64,6 @@
 					</div>
 				</div><!-- entry -->
 				<?php trackback_rdf(); ?>
-				<div class="comments-thread">
-					<?php comments_template(); ?>
-				</div>
 			</div><!-- post -->
 		<?php } ?>
 	<?php endwhile; else : ?>

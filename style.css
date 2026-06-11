@@ -737,7 +737,7 @@ ul.topics a:hover {
 /* comments thread ----------------------------------------------- */
 
 /* let the comment blocks join the row grid */
-#comment-thread {
+.comment-thread {
 	display: contents;
 	}
 
@@ -745,7 +745,7 @@ ul.topics a:hover {
 	grid-column: 5 / 6;
 	}
 
-#comment-thread .text p {
+.comment-thread .text p {
 	font-size: 16px;
 	}
 
@@ -782,6 +782,7 @@ h1#comments,
 	}
 
 #comment-box  {
+	box-sizing: border-box;
 	width: 100%;
 	height: 240px;
 	padding: 10px;

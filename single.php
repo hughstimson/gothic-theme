@@ -33,9 +33,7 @@
 					</div><!-- entry -->
 					<?php trackback_rdf(); ?>
 			</div><!-- post -->
-			<div id="comment-thread">
-			<?php comments_template(); ?>
-			</div>
+			<?php get_template_part( 'template-parts/comment-thread' ); ?>
 		<?php endwhile; else : ?>
 		<h2 class="center">Not Found</h2>
 		<p class="center">Sorry, but you are looking for something that isn't here.</p>

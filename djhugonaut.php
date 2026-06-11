@@ -43,9 +43,6 @@ Template Name: djhugonaut
 						</div>
 					</div><!-- entry -->
 					<?php trackback_rdf(); ?>
-					<div class="comments-thread">
-						<?php comments_template(); ?>
-					</div>
 			</div><!-- post -->
 		<?php endwhile; else : ?>
 		<h2 class="center">Not Found</h2>
