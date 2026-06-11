@@ -536,9 +536,6 @@ ol ol {
 
 /* search form --------------------------------------------------- */
 
-#search-box {
-	}
-
 #searchform input {
 	width: 120px;
 	border: none;
@@ -971,7 +968,7 @@ table.radio-playlist td.radio-playlist-label {
 
 }
 
-/* text images, at the bottom because the expression formatting breaks parsing */
+/* text images */
 
 .text img {
 	padding: 3px;
@@ -979,6 +976,4 @@ table.radio-playlist td.radio-playlist-label {
 	border: 1px solid #B0B0B0;
 	margin: 15px  0 8px -4px;
 	max-width: 630px;
-	/* different for IE, per www.fastechws.com/tricks/web/image-max-width-height.php */
-	width: expression(this.width > 630 ? "630px" : true);
 }
