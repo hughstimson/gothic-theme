@@ -1,24 +1,24 @@
 <?php get_header(); ?>
-<div class="row collapsibleSidebar narrow">
-	<div class="sideBar">		
-			<h1 class="backLink"><a href="<?php bloginfo('url'); ?>"><span class="navArrow">&larr;</span> projects</a></h1>
-	</div><!--sideBar-->
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-				<div class="contentWithSidebar post" id="post-<?php the_ID(); ?>">
+<div class="row collapsible-sidebar narrow">
+	<div class="side-bar">
+			<h1 class="back-link"><a href="<?php bloginfo('url'); ?>"><span class="nav-arrow">&larr;</span> projects</a></h1>
+	</div><!--side-bar-->
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				<div class="content-with-sidebar post" id="post-<?php the_ID(); ?>">
 					<div class="metadata">
 						<div class="bar"></div>
 						status: <span class="status">
 							<?php
 								$mykey_values = get_post_custom_values('status');
 								foreach ( $mykey_values as $key => $value ) {
-									echo "$value"; 
+									echo "$value";
 								}
 							?>
 						</span><br />
 						updated: <?php the_time('j M Y') ?>
 						<ul class="topics">
 						</ul>
-						<div class="commentsLink">
+						<div class="comments-link">
 							<?php comments_popup_link ('comment', '<span class="blue">1</span> comment', '<span class="blue">%</span> comments', ''); ?>
 						</div>
 						<div>

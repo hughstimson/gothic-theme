@@ -5,15 +5,15 @@ Template Name: projects
 ?>
 <?php get_header(); ?>
 <div class="row">
-	<div class="sideBar">
+	<div class="side-bar">
 			<h1>Topics</h1>
 			<ul class="topics">
 <!--				<?php wp_list_categories('title_li=&child_of=17'); ?> -->
 			</ul>
-	</div><!--sideBar-->
+	</div><!--side-bar-->
 	<?php query_posts('cat=17'); ?>
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<div class="contentWithSidebar project">
+	<div class="content-with-sidebar project">
 		<?php the_post_thumbnail(); ?>
 		<div class="description">
 			<h2>
@@ -37,7 +37,7 @@ Template Name: projects
 		<?php endwhile; else: ?>
 		<p>Sorry, no posts matched your criteria.</p>
 	<?php endif; ?>
-	<div class="contentWithDoubleSidebar" id="postsNav">
+	<div class="content-with-double-sidebar" id="posts-nav">
 		<h1><?php posts_nav_link(' &#183; ', '&larr; newer posts', 'older posts &rarr;'); ?></h1>
 	</div>
 </div><!--row-->

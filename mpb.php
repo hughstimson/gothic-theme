@@ -4,20 +4,20 @@ Template Name: mpb
 */
 ?>
 <?php get_header(); ?>
-<div class="row" id="radioHeader">
-	<img id="hotinhereStaff" src="<?php bloginfo('template_url'); ?>/images/heroicshovel.jpg" />
-	<div class="contentWithDoubleSidebar">
-		<div id="radioTitle">Mountain Pine Beats</div>
+<div class="row" id="radio-header">
+	<img id="hotinhere-staff" src="<?php bloginfo('template_url'); ?>/images/heroicshovel.jpg" />
+	<div class="content-with-double-sidebar">
+		<div id="radio-title">Mountain Pine Beats</div>
 		<h1>Music From the Clearcuts</h1>
 		<p>
 			 Thursdays 9-10pm Summer 2008<br />
 			 CIDO 97.7fm / crestonradio.ca / <a href="http://hughstimson.org/category/mpb/feed"><img src="http://hughstimson.org/files/feed.png" id="feed">podcast</a><br />
 		</p>
 	</div>		
-</div> <!--radioHeader -->
-<div class="row collapsibleSidebar narrow">
-	<div class="sideBar" id="hostProfiles">
-		<h1 class="backLink"><a href="<?php bloginfo('url'); ?>/projects/radio"><span class="navArrow">&larr;</span> radio</a></h1>
+</div> <!--radio-header -->
+<div class="row collapsible-sidebar narrow">
+	<div class="side-bar" id="host-profiles">
+		<h1 class="back-link"><a href="<?php bloginfo('url'); ?>/projects/radio"><span class="nav-arrow">&larr;</span> radio</a></h1>
 		<p> </p>
 		<p>
 			The good folks at CIDO let me take over the radio while I was in town for a treeplanting contract.
@@ -25,16 +25,16 @@ Template Name: mpb
 		<p>
 			This was the result.
 		</p>
-	</div><!--sideBar-->
+	</div><!--side-bar-->
 	<?php query_posts('cat=28'); ?>	
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-				<div class="contentWithSidebar post" id="post-<?php the_ID(); ?>">
+				<div class="content-with-sidebar post" id="post-<?php the_ID(); ?>">
 					<div class="metadata">
 						<div class="bar"></div>
 						<div class="date">
 							<?php the_time('j M Y') ?>
 						</div>
-						<div class="commentsLink">
+						<div class="comments-link">
 							<?php comments_popup_link ('comment', '<span class="blue">1</span> comment', '<span class="blue">%</span> comments', ''); ?>
 						</div>
 						<div>
@@ -50,7 +50,7 @@ Template Name: mpb
 						</div>
 					</div><!-- entry -->
 					<?php trackback_rdf(); ?>
-					<div class="commentsThread">
+					<div class="comments-thread">
 						<?php comments_template(); ?>
 					</div>
 			</div><!-- post -->
@@ -59,7 +59,7 @@ Template Name: mpb
 		<p class="center">Sorry, but you are looking for something that isn't here.</p>
 		<!-- <?php include (TEMPLATEPATH . "/searchform.php"); ?> -->
 	<?php endif; ?>
-	<div class="contentWithDoubleSidebar" id="postsNav">
+	<div class="content-with-double-sidebar" id="posts-nav">
 		<h1><?php posts_nav_link(' &#183; ', '&larr; newer posts', 'older posts &rarr;'); ?></h1>
 	</div>
 </div><!--row-->

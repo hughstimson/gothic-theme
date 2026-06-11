@@ -32,7 +32,7 @@
 		</a>
 	</div>
 
-	<div id="siteNav">
+	<div id="site-nav">
 		<a
 			<?php if (is_home()) { echo " id=\"current\""; } ?>
 			href="<?php bloginfo('url'); ?>/blog">blog</a>
@@ -41,11 +41,11 @@
 			href="<?php bloginfo('url'); ?>/projects/radio">radio</a>
         <?php /*
         <a
-			<?php if (is_page('gallery')) { echo " id=\"current\""; } ?>
-			href="<?php bloginfo('url'); ?>/photos">photos</a>
-		<a
-			<?php if (is_page('about')) { echo " id=\"current\""; } ?>
-			href="<?php bloginfo('url'); ?>/about">about</a>
+                <?php if (is_page('gallery')) { echo " id=\"current\""; } ?>
+                href="<?php bloginfo('url'); ?>/photos">photos</a>
+        <a
+                <?php if (is_page('about')) { echo " id=\"current\""; } ?>
+                href="<?php bloginfo('url'); ?>/about">about</a>
 	    */ ?>
 	</div>
 

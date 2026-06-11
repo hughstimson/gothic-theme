@@ -22,7 +22,7 @@ $GLOBALS['comment'] = $comment; ?>
 	<div class="avatar">
 		<?php echo get_avatar($comment,$size='64',$default='identicon' ); ?><br />
 	</div>
-	<div class="commentAuthor">
+	<div class="comment-author">
 	<?php printf(__('%s'), get_comment_author_link()) ?>
 	</div>
 	<a title="comment permalink" alt="comment permalink" href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s'), get_comment_date('j M Y')) ?></a>

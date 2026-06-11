@@ -3,10 +3,10 @@
 Template Name: hotinhere
 */
 get_header(); ?>
-<div class="row" id="radioHeader">
-	<img id="hotinhereStaff" src="<?php bloginfo('template_url'); ?>/images/ihihstaff2.jpg" />
-	<div class="contentWithDoubleSidebar">
-		<div id="radioTitle">It's Hot In Here</div>
+<div class="row" id="radio-header">
+	<img id="hotinhere-staff" src="<?php bloginfo('template_url'); ?>/images/ihihstaff2.jpg" />
+	<div class="content-with-double-sidebar">
+		<div id="radio-title">It's Hot In Here</div>
 		<h1><a href="http://wcbn.org">WCBN</a>'s environmental talk show</h1>
 		<p>
 			noon to 1pm alternate Mondays<br />
@@ -14,29 +14,29 @@ get_header(); ?>
 			<a href="mailto:hotinhere.radio@gmail.com">hotinhere.radio@gmail.com</a>
 		</p>
 	</div>		
-</div> <!--radioHeader -->
-<div class="row collapsibleSidebar narrow">
-	<div class="sideBar" id="hostProfiles">
-		<h1 class="backLink"><a href="<?php bloginfo('url'); ?>/projects/radio"><span class="navArrow">&larr;</span> radio</a></h1>
+</div> <!--radio-header -->
+<div class="row collapsible-sidebar narrow">
+	<div class="side-bar" id="host-profiles">
+		<h1 class="back-link"><a href="<?php bloginfo('url'); ?>/projects/radio"><span class="nav-arrow">&larr;</span> radio</a></h1>
 		<p> </p>
 		<h1>your hosts:</h1>
 		<p>host profiles will show up here real soon</p>
-		<h1 class="backLink">correspondants:</h1>
+		<h1 class="back-link">correspondants:</h1>
 		<p>likewise</p>
 		<h1>engineers:</h1>
 		<p>likewise</p>
 		<h1>alumni:</h1>
 		<p>likewise</p>
-	</div><!--sideBar-->
+	</div><!--side-bar-->
 	<?php query_posts('cat=25&posts_per_page=-1'); ?>	
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-				<div class="contentWithSidebar post" id="post-<?php the_ID(); ?>">
+				<div class="content-with-sidebar post" id="post-<?php the_ID(); ?>">
 					<div class="metadata">
 						<div class="bar"></div>
 						<div class="date">
 							<?php the_time('j M Y') ?>
 						</div>
-						<div class="commentsLink">
+						<div class="comments-link">
 							<?php comments_popup_link ('comment', '<span class="blue">1</span> comment', '<span class="blue">%</span> comments', ''); ?>
 						</div>
 						<div>
@@ -52,7 +52,7 @@ get_header(); ?>
 						</div>
 					</div><!-- entry -->
 					<?php trackback_rdf(); ?>
-					<div class="commentsThread">
+					<div class="comments-thread">
 						<?php comments_template(); ?>
 					</div>
 			</div><!-- post -->
@@ -61,7 +61,7 @@ get_header(); ?>
 		<p class="center">Sorry, but you are looking for something that isn't here.</p>
 		<!-- <?php include (TEMPLATEPATH . "/searchform.php"); ?> -->
 	<?php endif; ?>
-	<div class="contentWithDoubleSidebar" id="postsNav">
+	<div class="content-with-double-sidebar" id="posts-nav">
 		<h1><?php posts_nav_link(' &#183; ', '&larr; newer posts', 'older posts &rarr;'); ?></h1>
 	</div>
 </div><!--row-->

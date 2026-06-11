@@ -1,5 +1,5 @@
 <?php $search_text = "Search"; ?>
-<div id="searchBox">
+<div id="search-box">
 	<form method="get" id="searchform"  action="<?php bloginfo('url'); ?>/">
 		<input 
 			type="text" 

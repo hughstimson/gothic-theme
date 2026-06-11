@@ -1,10 +1,10 @@
 <?php get_header(); ?>
-<div class="row collapsibleSidebar narrow">
-	<div class="sideBar">
-			<h1 class="backLink"><a href="<?php bloginfo('url'); ?>/blog"><span class="navArrow">&larr;</span>  blog</a></h1>
-	</div><!--sideBar-->
+<div class="row collapsible-sidebar narrow">
+	<div class="side-bar">
+			<h1 class="back-link"><a href="<?php bloginfo('url'); ?>/blog"><span class="nav-arrow">&larr;</span>  blog</a></h1>
+	</div><!--side-bar-->
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-				<div class="contentWithSidebar post" id="post-<?php the_ID(); ?>">
+				<div class="content-with-sidebar post" id="post-<?php the_ID(); ?>">
 					<div class="metadata">
 						<div class="bar"></div>
 						<div class="date">
@@ -16,7 +16,7 @@
 							 if ($category->cat_name != 'Uncategorized') {echo '<li><a href="'. get_category_link( $category->term_id ).'" title="' . sprintf( __( "View all posts in %s" ), $category->name ).'"'.'>'.$category->name.'</a></li>'; } }
 						?>
 						</ul>
-						<div class="commentsLink">
+						<div class="comments-link">
 							<?php comments_popup_link ('comment', '<span class="blue">1</span> comment', '<span class="blue">%</span> comments', ''); ?>
 						</div>
 						<div>
@@ -33,7 +33,7 @@
 					</div><!-- entry -->
 					<?php trackback_rdf(); ?>
 			</div><!-- post -->
-			<div id="commentThread">
+			<div id="comment-thread">
 			<?php comments_template(); ?>
 			</div>
 		<?php endwhile; else : ?>

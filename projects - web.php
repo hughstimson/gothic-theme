@@ -4,15 +4,15 @@ Template Name: projects - web
 */
 ?>
 <?php get_header(); ?>
-<div class="row collapsibleSidebar">
-	<div class="sideBar">
-			<h1 class="backLink"><a href="<?php bloginfo('url'); ?>/projects">&larr; back to projects</a></h1>
-	</div><!--sideBar-->
+<div class="row collapsible-sidebar">
+	<div class="side-bar">
+			<h1 class="back-link"><a href="<?php bloginfo('url'); ?>/projects">&larr; back to projects</a></h1>
+	</div><!--side-bar-->
 	<?php
 	query_posts('post_type=page&meta_key=topic&meta_value=web'); 
 	 while (have_posts()) : the_post();
 	?>
-	<div class="contentWithSidebar project">
+	<div class="content-with-sidebar project">
 		<?php the_post_thumbnail(); ?>
 		<div class="description">
 			<h2>
@@ -39,7 +39,7 @@ Template Name: projects - web
 			</div><!--descrtiption-->
 		</div><!-- project -->	
 	<?php endwhile; ?>
-	<div class="contentWithDoubleSidebar" id="postsNav">
+	<div class="content-with-double-sidebar" id="posts-nav">
 		<h1><?php posts_nav_link(' &#183; ', '&larr; newer projects', 'older projects &rarr;'); ?></h1>
 	</div>
 </div><!--row-->
