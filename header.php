@@ -48,6 +48,4 @@
                 href="<?php bloginfo('url'); ?>/about">about</a>
 	    */ ?>
 	</div>
-
-	<div class="clear"> </div>
 </div><!--banner row-->

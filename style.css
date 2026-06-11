@@ -51,10 +51,6 @@ body {
 	padding: 0 50px;
 	}
 
-#banner .clear {
-	display: none;
-	}
-
 /*  Catch-all so any unanticipated element in a row lands in the main content column
     rather than breaking out into the gutter. */
 .row > * {
