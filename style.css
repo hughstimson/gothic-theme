@@ -112,14 +112,6 @@ body {
 		display: none;
 		}
 
-	/* The metadata column shrinks to its content width (~120px); drop the
-	   bar's 50px left indent so it fills the column. Metadata text stays
-	   right-aligned (the bar, its leftmost element, lines up with the
-	   banner content). */
-	.row .metadata .bar {
-		margin-left: 0;
-		}
-
 	#project-page.row .text .callout:first-child {
 		float: none;
 		width: auto;
@@ -573,7 +565,12 @@ ol ol {
 	}
 
 .metadata .bar {
-	margin-left: 50px;
+	/* a 120px dotted rule, kept flush-right in the metadata column with an
+	   auto left margin. The column is 170px at full width and 120px at
+	   intermediate width; the auto margin handles both, so no per-width
+	   override is needed (it's hidden entirely at narrow width). */
+	width: 120px;
+	margin-left: auto;
 	margin-bottom: 4px;
 	}
 
