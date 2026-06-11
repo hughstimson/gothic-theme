@@ -113,11 +113,10 @@ body {
 		}
 
 	/* The metadata column shrinks to its content width (~120px); drop the
-	   bar's and thumbnail's 50px left indent so they fill it from the
-	   margin. Metadata text stays right-aligned (the bar, its leftmost
-	   element, lines up with the banner content). */
-	.row .metadata .bar,
-	.row img.attachment-post-thumbnail {
+	   bar's 50px left indent so it fills the column. Metadata text stays
+	   right-aligned (the bar, its leftmost element, lines up with the
+	   banner content). */
+	.row .metadata .bar {
 		margin-left: 0;
 		}
 
@@ -818,11 +817,12 @@ color: black;
 .project > a,
 .project > img.attachment-post-thumbnail {
 	grid-column: 1;
+	justify-self: end;
 	}
 
 img.attachment-post-thumbnail {
 	background-color: lightgrey;
-	margin: 0 0 0 50px;
+	margin: 0;
 	}
 
 a:link > img.attachment-post-thumbnail,
