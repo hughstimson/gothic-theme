@@ -827,7 +827,8 @@ img#hotinhere-staff {
 	font-size: 100px;
 	line-height: 84px;
 	color: #8B0003;
-	white-space: nowrap;
+	white-space: normal;
+	overflow-wrap: break-word;
 	}
 
 #radio-header p {
