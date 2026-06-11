@@ -115,26 +115,6 @@ body {
 		text-align: left;
 		}
 
-	/* Individual radio project pages (mpb / dj Hugonaut / hotinhere):
-	   lay the header out as a flex row so the title/blurb sits beside the
-	   photo while there's room, and wraps beneath it once the row is too
-	   narrow for both (not forced while both fit). The posts below follow
-	   the article pattern via the shared row rules. */
-	#radio-header {
-		display: flex;
-		flex-wrap: wrap;
-		box-sizing: border-box;
-		padding: 0 50px;
-		gap: 16px 50px;
-		}
-
-	#radio-header > #hotinhere-staff {
-		flex: none;
-		}
-
-	#radio-header > .content-with-double-sidebar {
-		flex: 1 1 0;
-		}
 	}
 
 /* Narrow-width variant ------------------------------------------------- */
@@ -200,6 +180,21 @@ body {
 
 	.row #contact > p {
 		display: block;
+		}
+
+	#radio-header.row {
+		grid-template-columns: 50px minmax(0, 1fr) 50px;
+		row-gap: 16px;
+		}
+
+	#radio-header.row > #hotinhere-staff,
+	#radio-header.row > .content-with-double-sidebar {
+		grid-column: 2 / 3;
+		}
+
+	#radio-header.row > #hotinhere-staff {
+		max-width: 100%;
+		height: auto;
 		}
 	}
 
@@ -814,12 +809,17 @@ a:hover > img.attachment-post-thumbnail {
 /* Radio shows ----------------------------------------------- */
 
 #radio-header {
+	grid-template-columns: 50px auto 50px minmax(0, 1fr) 50px;
 	margin-bottom: 50px;
 	}
 
 img#hotinhere-staff {
-	grid-column: 2 / 5;
+	grid-column: 2 / 3;
 	border: 1px solid darkgrey;
+	}
+
+#radio-header > .content-with-double-sidebar {
+	grid-column: 4 / 5;
 	}
 
 #radio-title {
