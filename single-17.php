@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="row">
+<div class="row collapsibleSidebar narrow">
 	<div class="sideBar">		
 			<h1 class="backLink"><a href="<?php bloginfo('url'); ?>"><span class="navArrow">&larr;</span> projects</a></h1>
 	</div><!--sideBar-->
