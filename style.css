@@ -1,11 +1,11 @@
-/*   
+/*
 Theme Name: gothic green
 */
 
 /* font ---------------------------------------------------------- */
 
 @font-face {
-    font-family: 'LeagueGothicRegular';
+    font-family: 'league-gothic-regular';
     src: url('fonts/League_Gothic-webfont.eot');
     src: url('fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
          url('fonts/League_Gothic-webfont.woff') format('woff'),
@@ -25,50 +25,200 @@ Theme Name: gothic green
 
 body {
 	border-width: 6px 0 0 0;
-	border-style: solid; 
+	border-style: solid;
 	border-color: black;
 	}
 
 .row {
+	display: grid;
+	grid-template-columns: 50px 120px 170px 50px minmax(0, 1fr) 50px;
+	/* gutter | sidebar | metadata | gap | content | gutter */
+	align-items: start;
 	max-width: 1070px;
-	min-width: 730px;
 	margin: 0 auto;
-	overflow: normal;
 	}
 
-.sideBar {
+/* The banner: wordmark on the left, site links on the right. When there
+   isn't horizontal room for both, the links wrap to a left-aligned block
+   directly beneath the wordmark. */
+#banner.row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	column-gap: 30px;   /* minimum space between the two before they wrap */
+	box-sizing: border-box;
+	padding: 0 50px;
+	}
+
+/*  Catch-all so any unanticipated element in a row lands in the main content column
+    rather than breaking out into the gutter. */
+.row > * {
+	grid-column: 5 / 6;
+	}
+
+.side-bar {
+	grid-column: 2 / 3;
+	grid-row: 1 / span 9999;
+	/* span all rows so a tall sidebar overlaps the content stack
+	   (as the original float did) instead of inflating the first row */
 	width: 120px;
-	margin-left: 50px;
-	float: left;
 	text-align: left;
 	}
 
-.contentWithSidebar {
-	margin-left: 170px;
-	margin-right: 50px;
+.content-with-sidebar {
+	grid-column: 3 / 6;
+	display: grid;
+	grid-template-columns: 170px 50px minmax(0, 1fr);
+	/* metadata | gap | content */
+	align-items: start;
 	}
 
-.contentWithDoubleSidebar { 
-	margin-left: 390px;
-	margin-right: 50px;
+.content-with-sidebar > * {
+	grid-column: 3;
+	}
+
+.content-with-sidebar > .metadata {
+	grid-column: 1;
+	}
+
+.content-with-double-sidebar {
+	grid-column: 5 / 6;
+	}
+
+/* Intermediate-width variant --------------------------------------- */
+/* Below the full layout's 1070px max the content column starts to
+   shrink, so at this intermediate width drop the left sidebar and let
+   the metadata + content columns slide left into the freed space. The
+   content keeps its 50px right gutter, so its right edge stays aligned
+   with the site links in the banner).
+   */
+@media (max-width: 1070px) {
+	.row {
+		grid-template-columns: 50px 0 120px 50px minmax(0, 1fr) 50px;
+		/* gutter | (sidebar removed) | metadata | gap | content | gutter */
+		}
+
+	.row .content-with-sidebar {
+		grid-template-columns: 120px 50px minmax(0, 1fr);
+		/* metadata | gap | content */
+		}
+
+	.row .side-bar {
+		display: none;
+		}
+
+	#project-page.row .text .callout:first-child {
+		float: none;
+		width: auto;
+		margin: 10px 0 16px 0;
+		text-align: left;
+		}
+
+	/* Individual radio project pages (mpb / dj Hugonaut / hotinhere):
+	   lay the header out as a flex row so the title/blurb sits beside the
+	   photo while there's room, and wraps beneath it once the row is too
+	   narrow for both (not forced while both fit). The posts below follow
+	   the article pattern via the shared row rules. */
+	#radio-header {
+		display: flex;
+		flex-wrap: wrap;
+		box-sizing: border-box;
+		padding: 0 50px;
+		gap: 16px 50px;
+		}
+
+	#radio-header > #hotinhere-staff {
+		flex: none;
+		}
+
+	#radio-header > .content-with-double-sidebar {
+		flex: 1 1 0;
+		}
+	}
+
+/* Narrow-width variant ------------------------------------------------- */
+/* At 870px and below the metadata leaves its column and becomes a single
+   left-aligned horizontal row directly above each post's title, so the
+   content column can reach the left gutter (aligned with the banner icon).
+   Self-contained, so it doesn't rely on the intermediate variant also
+   being active.
+   */
+@media (max-width: 870px) {
+	.row {
+		grid-template-columns: 50px 0 0 0 minmax(0, 1fr) 50px;
+		/* gutter | (sidebar) | (metadata) | (gap) | content | gutter */
+		}
+
+	.row .side-bar {
+		display: none;
+		}
+
+	/* stack the metadata above the entry instead of beside it */
+	.row .content-with-sidebar {
+		display: block;
+		}
+
+	/* metadata: a single left-aligned horizontal row (date, tags, comments) */
+	.row .metadata {
+		text-align: left;
+		margin-bottom: 8px;
+		}
+
+	/* Every metadata item (date, tags, comments, the logged-in edit link)
+	   flows inline, so the whole row reflows as one span and the tags wrap
+	   with everything else instead of stacking inside the topics block */
+	.row .metadata > * {
+		display: inline;
+		margin-right: 14px;
+		}
+
+	.row .metadata .topics li {
+		display: inline;
+		}
+
+	.row .metadata .topics li:not(:last-child)::after {
+		content: ", ";
+		}
+
+	/* No dotted bar above the metadata row */
+	.row .metadata .bar {
+		display: none;
+		}
+
+	/* About page: the contact panel (its metadata) reflows with the mugshot
+	   floated left and the detail paragraphs stacked vertically to its
+	   right, left-aligned against the image */
+	.row #contact {
+		display: flow-root;
+		}
+
+	.row #contact > a {
+		float: left;
+		margin-right: 14px;
+		}
+
+	.row #contact > p {
+		display: block;
+		}
 	}
 
 /* sitewide ------------------------------------------------------ */
 
-h1, 
-h3, 
-.sideBar, 
-.metadata, 
+h1,
+h3,
+.side-bar,
+.metadata,
 .project .status,
-#searchform input, 
-.topics, 
+#searchform input,
+.topics,
 .gallery-photo,
 .gallery-album,
-.gbBlock,
-.gbSystemLinks,
-.block-core-Navigator,
-.sizeSelector,
-.zpAdminLinks,
+.gb-block,
+.gb-system-links,
+.block-core-navigator,
+.size-selector,
+.zp-admin-links,
 table.radio-playlist {
 	font-size: 15px;
 	line-height: 26px;
@@ -76,12 +226,12 @@ table.radio-playlist {
 		'Segoe UI',
 		'Helvetica Neue',
 		'Helvetica',
-		arial, 
+		arial,
 		'Droid Sans',
 		sans-serif;
 	}
-h1, 
-h3, 
+h1,
+h3,
 #searchform input {
 	font-weight: bold;
 	}
@@ -89,7 +239,7 @@ h3,
 h2,
 #banner {
 	font-family:
-		'LeagueGothicRegular',
+		'league-gothic-regular',
 		Haettenschweiler,
 		'Arial Narrow',
 		'Franklin Gothic Medium',
@@ -112,7 +262,7 @@ h3 {
 	line-height: 30px;
 	}
 
-h2 a, 
+h2 a,
 h2 a:visited {
 	color: #3c6c00;
 	text-decoration: none;
@@ -122,7 +272,7 @@ h2 a:hover {
 	border-bottom: 2px black solid;
 	}
 
-h1 a, 
+h1 a,
 h1 a:visited {
 	color: black;
 	text-decoration: none;
@@ -133,17 +283,17 @@ h1 a:hover {
 	}
 
 h4,
-.text p, 
+.text p,
 .text ol,
 .text ul,
 .project p,
-.comment, 
-#respond, 
-#commentform 
-label, 
-#commentBox, 
-#radioHeader, 
-blockquote p, 
+.comment,
+#respond,
+#commentform
+label,
+#comment-box,
+#radio-header,
+blockquote p,
 .callout,
 .gallery .description {
 	font-size: 18px;
@@ -165,7 +315,7 @@ h4 {
 	color: #3c6c00;
 	margin-top: 15px;
 }
-	
+
 .text p {
 	margin-bottom: 16px;
 	text-align: justify;
@@ -180,9 +330,9 @@ h4 {
 	margin-left: -30px;
 	}
 
-.text blockquote p:first-child, 
-.comment p:first-child, 
-.radio p:first-child, 
+.text blockquote p:first-child,
+.comment p:first-child,
+.radio p:first-child,
 #fourohfour p:first-child {
 	text-indent: 0;
 	}
@@ -190,6 +340,10 @@ h4 {
 
 .text {
 	margin-bottom: 30px;
+	/* Break long unbreakable strings (e.g. a pasted URL or embed code)
+	   so they wrap inside the content column instead of overflowing the
+	   page and creating a horizontal scrollbar */
+	overflow-wrap: break-word;
 	}
 
 .text ul,
@@ -211,82 +365,77 @@ h4 {
 .text ol.alpha {
 	list-style-type: lower-alpha;
 }
-	
-.entry, 
-.comment {
-	margin-left: 220px;
-	}
 
 .text a {
 	border-bottom: 1px solid #3AA9C7;
 	}
 
-.text a, 
-.text a:visited, 
+.text a,
+.text a:visited,
 .comment a,
-.sideBar a,
-.sideBar a:visited,
-.zpAdminLinks a,
-.zpAdminLinks a:visited {
+.side-bar a,
+.side-bar a:visited,
+.zp-admin-links a,
+.zp-admin-links a:visited {
 	text-decoration: none;
 	}
 
-.text a, 
-.text a:visited, 
+.text a,
+.text a:visited,
 .comment a {
-	color: #3AA9C7;	
+	color: #3AA9C7;
 }
 
-.sideBar a, 
-.sideBar a:visited, 
+.side-bar a,
+.side-bar a:visited,
 .comment a,
-.zpAdminLinks a,
-.zpAdminLinks a:visited{
-	color: black;	
+.zp-admin-links a,
+.zp-admin-links a:visited{
+	color: black;
 }
 
-.text a:hover, 
-.text a:visited, 
-.comment a:hover, 
+.text a:hover,
+.text a:visited,
+.comment a:hover,
 .comment a:visited {
 	border-bottom: 1px dotted #3AA9C7;
 	}
 
-.sideBar a:hover,
-.sideBar a:visited ,
-.zpAdminLinks a:hover {
+.side-bar a:hover,
+.side-bar a:visited ,
+.zp-admin-links a:hover {
 	border-bottom: 1px solid black;
-}	
-	
-	
+}
+
+
 strong {
 	font-size: inherit;
 	font-weight: bold;
 	font-variant: normal;
 	}
 
-blockquote p, 
+blockquote p,
 .callout {
 	font-style: italic;
 	font-size: 16px;
 	color: #6C6A63;
 	}
 
-.sideBar p {
+.side-bar p {
 	margin-top: 30px;
 	}
 
-.sideBar p, 
+.side-bar p,
 .gallery-album p {
 		line-height: 22px;
 		margin-bottom: 0.938em;
 	}
 
-.pageNav {
+.page-nav {
 	margin-top: 0px;
 }
-	
-.navArrow {
+
+.nav-arrow {
 	font-size: larger;
 }
 
@@ -326,17 +475,15 @@ ol ol {
 
 #banner {
 	margin-top: 45px;
-	margin-bottom: 50px;
-	height: 32px;
-	text-align: right;
+	/* the box now sizes to the nav (was a fixed 32px that the taller nav
+	   overflowed); 38px keeps the original gap below the banner */
+	margin-bottom: 38px;
 	font-weight: normal;
 	white-space: nowrap;
 	}
 
-#hughstimsonorg { 
-	float: left; 
+#hughstimsonorg {
 	text-transform: uppercase;
-	margin-left: 50px;
 	font-size: 43px;
 	line-height: 33px;
 	}
@@ -354,7 +501,7 @@ ol ol {
 	color: #86847B;
 	}
 
-#hughstimsonorg a, 
+#hughstimsonorg a,
 #hughstimsonorg a:visited {
 	text-decoration: none;
 	}
@@ -363,9 +510,7 @@ ol ol {
 	border-bottom: 2px solid black;
 	}
 
-#siteNav {
-	float: right;
-	margin: 0 50px 0 30px;
+#site-nav {
 	padding-top: 0px;
 	text-transform: uppercase;
 	font-size: 30px;
@@ -374,25 +519,22 @@ ol ol {
 	color: black;
 	}
 
-#siteNav a,
-#siteNav a:visited {
+#site-nav a,
+#site-nav a:visited {
 	color: black;
 	text-decoration: none;
 	}
 
-#siteNav a:hover {
+#site-nav a:hover {
 	color: #40badb;
 	border-bottom: 2px solid #40badb;
 	}
 
-#siteNav a#current {
+#site-nav a#current {
 	color: #40badb;
 	}
 
 /* search form --------------------------------------------------- */
-
-#searchBox {
-	}
 
 #searchform input {
 	width: 120px;
@@ -405,8 +547,6 @@ ol ol {
 /* blog ---------------------------------------------------------- */
 
 .metadata {
-	float: left;
-	width: 170px;
 	text-align: right;
 	color: black;
 	}
@@ -416,9 +556,14 @@ ol ol {
 	border-color: black;
 	border-style: dotted;
 	}
-	
+
 .metadata .bar {
-	margin-left: 50px;
+	/* a 120px dotted rule, kept flush-right in the metadata column with an
+	   auto left margin. The column is 170px at full width and 120px at
+	   intermediate width; the auto margin handles both, so no per-width
+	   override is needed (it's hidden entirely at narrow width). */
+	width: 120px;
+	margin-left: auto;
 	margin-bottom: 4px;
 	}
 
@@ -426,7 +571,7 @@ ol ol {
 	color: black;
 	}
 
-.metadata .date, 
+.metadata .date,
 .metadata .status {
 	font-weight: bold;
 	}
@@ -440,11 +585,11 @@ ol ol {
 	border-bottom: 1px solid black;
 	}
 
-.commentsLink .blue {
+.comments-link .blue {
 	color: #3AA9C7;
 	}
 
-#postsNav {
+#posts-nav {
 	text-align: right;
 	margin-bottom: 50px;
 	}
@@ -467,6 +612,12 @@ blockquote {
 	margin-bottom: 0px;
 	}
 
+/* grid items form a BFC, so the last line's bottom margin no longer
+   collapses into .post's margin-bottom; drop it to keep spacing identical */
+.post .text > :last-child {
+	margin-bottom: 0;
+	}
+
 .post {
 	min-height: 120px;
 	margin-bottom: 90px;
@@ -475,8 +626,8 @@ blockquote {
 .tweet {
 	margin-bottom: 0;
 	}
-	
-img.tweetBird {
+
+img.tweet-bird {
 	display: inline !important;
 	border-width: 0px !important;
 	background-color: transparent !important;
@@ -484,16 +635,16 @@ img.tweetBird {
 	margin: 0 0 0px 0 !important;
 	}
 
-a.tweetBird,
-a.tweetBird:hover {
+a.tweet-bird,
+a.tweet-bird:hover {
 	border: 0px;
 	}
 
 .tweet p {
 	display: inline;
 	}
-	
-/*	
+
+/*
 .tweet p:after {
 	content:url(images/tweet.png);
 	padding-left: 5px;
@@ -522,7 +673,7 @@ a.tweetBird:hover {
 	font-size: 17px;
 	line-height: 1.6;
 }
-	
+
 /* topics -------------------------------------------------------- */
 
 .topics {
@@ -532,12 +683,12 @@ a.tweetBird:hover {
 	color: #86847B;
 	}
 
-.topics a, 
+.topics a,
 .topics a:visited {
 	color: #86847B;
 	text-decoration: none;
 	}
-	
+
 .metadata .topics a:hover {
 	border-bottom: 1px solid #86847B;
 	}
@@ -585,7 +736,16 @@ ul.topics a:hover {
 
 /* comments thread ----------------------------------------------- */
 
-#commentThread .text p {
+/* let the comment blocks join the row grid */
+#comment-thread {
+	display: contents;
+	}
+
+.navigation {
+	grid-column: 5 / 6;
+	}
+
+#comment-thread .text p {
 	font-size: 16px;
 	}
 
@@ -597,8 +757,8 @@ ul.topics a:hover {
 	margin-bottom: 8px;
 	}
 
-h1#comments, 
-.comment, 
+h1#comments,
+.comment,
 #respond {
 	margin-bottom: 30px;
 	}
@@ -615,41 +775,47 @@ h1#comments,
 		border: 1px solid #86847B;
 	}
 
-.comment,  
-#commentBox {
+.comment,
+#comment-box {
 	margin-bottom: 30px;
 	color: #6C6A63;
 	}
 
-#commentBox  {
+#comment-box  {
 	width: 100%;
 	height: 240px;
 	padding: 10px;
 	}
 
-.commentAuthor {
+.comment-author {
 	font-weight: bold;
 	color: black;
 	}
 
-.metadata .commentAuthor a {
+.metadata .comment-author a {
 color: black;
-} 
-	
+}
+
 /* projects ------------------------------------------------------ */
 
 .project .description {
-	margin-left: 220px;
 	margin-bottom: 50px;
 	}
 
-img.attachment-post-thumbnail {
-	float: left;
-	background-color: lightgrey;
-	margin: 0 0 0 50px;
+/* project thumbnail: either an <a> wrapper (projects index) or a bare
+   <img> (per-topic project lists) */
+.project > a,
+.project > img.attachment-post-thumbnail {
+	grid-column: 1;
+	justify-self: end;
 	}
 
-a:link > img.attachment-post-thumbnail, 
+img.attachment-post-thumbnail {
+	background-color: lightgrey;
+	margin: 0;
+	}
+
+a:link > img.attachment-post-thumbnail,
 a:visited > img.attachment-post-thumbnail {
 	border-width: 1px;
 	border-style: solid;
@@ -661,7 +827,7 @@ a:hover > img.attachment-post-thumbnail {
 }
 
 .project ul {
-	display: inline;	
+	display: inline;
 	}
 
 .project ul.topics li {
@@ -674,43 +840,41 @@ a:hover > img.attachment-post-thumbnail {
 	margin-bottom: 8px;
 	}
 
-#projectPage .text .callout img {
+#project-page .text .callout img {
 	border-style: none;
 	border-width: 0;
 	}
 
 /* Radio shows ----------------------------------------------- */
 
-#radioHeader {
+#radio-header {
 	margin-bottom: 50px;
 	}
 
-img#hotinhereStaff {
-	float: left;
-	margin-left: 50px;
-	text-align: right;
+img#hotinhere-staff {
+	grid-column: 2 / 5;
 	border: 1px solid darkgrey;
 	}
 
-#radioTitle {
-	font-family: 'LeagueGothicRegular';
+#radio-title {
+	font-family: 'league-gothic-regular';
 	font-size: 100px;
 	line-height: 84px;
 	color: #8B0003;
 	white-space: nowrap;
 	}
 
-#radioHeader p {
+#radio-header p {
 	line-height: 25px;
 	}
 
-#radioHeader p a, 
-#radioHeader p a:visited {
+#radio-header p a,
+#radio-header p a:visited {
 	text-decoration: none;
 	color: black;
 	}
 
-#radioHeader p a:hover {
+#radio-header p a:hover {
 	border-bottom: 1px solid black;
 	}
 
@@ -718,7 +882,7 @@ img#feed {
 	border-style: none;
 	}
 
-#hostProfiles.sideBar p {
+#host-profiles.side-bar p {
 	margin-top: 0;
 	}
 
@@ -772,22 +936,21 @@ table.radio-playlist td.radio-playlist-label {
 
 /* about --------------------------------------------------------- */
 
-#contact.sideBar {
-	margin-left: 0;
-	width: 170px;
-	text-align: right;
-	}
-
-#contact.sideBar p {
+/* the contact panel is the about page's metadata column (a .metadata,
+   so column placement, right-alignment and the narrow reflow come from
+   the shared rules) */
+#contact p {
 	margin-top: 0;
+	margin-bottom: 0.938em;
 	margin-left: 0;
+	line-height: 22px;
 	}
 
 #contact img {
 	border: 1px solid #86847B;
 	margin-bottom: 28px;
 	}
-	
+
 /* 404 ----------------------------------------------------------- */
 
 #fourohfour h2 {
@@ -804,8 +967,8 @@ table.radio-playlist td.radio-playlist-label {
 	}
 
 }
-	
-/* text images, at the bottom because the expression formatting breaks parsing */
+
+/* text images */
 
 .text img {
 	padding: 3px;
@@ -813,6 +976,4 @@ table.radio-playlist td.radio-playlist-label {
 	border: 1px solid #B0B0B0;
 	margin: 15px  0 8px -4px;
 	max-width: 630px;
-	/* different for IE, per www.fastechws.com/tricks/web/image-max-width-height.php */
-	width: expression(this.width > 630 ? "630px" : true);
 }

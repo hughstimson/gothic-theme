@@ -3,65 +3,19 @@
     padding: 0;
 }
 
-div#retro-container h1 {
-    margin: 2.8em 0 0 0;
-}
-
-div#retro-container p,
-div#retro-container img {
-    margin: 1.4em 0 0 0;
-}
-
-div#retro-container {
+#retro-container {
     font-size: 16px;
     line-height: 1.4;
-    margin-bottom: 3em;
-}
-
-div#retro-masthead-div {
+    padding-top: 5em;
     text-align: center;
 }
 
-div#retro-container h1 {
+#retro-container h1 {
     font-weight: bold;
     font-size: 1em;
 }
 
-div.retro-quote-div {
-    padding: 2.8em 1.4em 0 1.4em;
-    font-size: 1em;
-}
-
-@media (max-width: 768px) {
-    div.retro-quote-div {
-        padding-right: 1.4em;
-        padding-left: 1.4em;
-    }
-}
-
-/* Optional, to make the centre gutter wider:
-
-@media (min-width: 768px) {
-    div.retro-quote-div:nth-child(odd) {
-        padding-right: 2.5em;
-    }
-
-    div.retro-quote-div:nth-child(even) {
-        padding-left: 2.5em;
-    }
-}
-*/
-
-div.retro-content-div {
-    /*     text-align: justify;
-        text-justify: distribute; */
-}
-
-div.retro-citation-div {
+#retro-container img,
+#retro-container p {
     margin-top: 1.4em;
-    font-style: italic;
-}
-
-span.retro-title-span {
-    text-decoration: underline;
 }

@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 <div class="row" id="fourohfour">
-	<div class="sideBar">
+	<div class="side-bar">
 		<?php include (TEMPLATEPATH . '/searchform.php'); ?>
-	</div><!--sideBar-->
-	<div class="contentWithDoubleSidebar">
+	</div><!--side-bar-->
+	<div class="content-with-double-sidebar">
 		<h2>404</h2>
 		<div class="text">
 			<p><em>Sorry:</em> whatever you were looking for isn't there.</p> 

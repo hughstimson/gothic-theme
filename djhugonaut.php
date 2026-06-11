@@ -4,27 +4,30 @@ Template Name: djhugonaut
 */
 ?>
 <?php get_header(); ?>
-<div class="row" id="radioHeader">
-	<img id="hotinhereStaff" src="<?php bloginfo('template_url'); ?>/images/wcbnboard.jpg" />
-	<div class="contentWithDoubleSidebar">
-		<div id="radioTitle" style="margin:0 0 10px 0;">dj Hugonaut</div>
+<div class="row" id="radio-header">
+	<img id="hotinhere-staff" src="<?php bloginfo('template_url'); ?>/images/wcbnboard.jpg" />
+	<div class="content-with-double-sidebar">
+		<div id="radio-title" style="margin:0 0 10px 0;">dj Hugonaut</div>
 		<h1>Freeform music live on WCBN</h1>
 		<p>
 			 Fall 2006 Monday 6am; Winter 2007 to Fall 2008 Thur 1pm<br />
 			 WCBN 88.3fm / wcbn.org / <a href="http://hughstimson.org/category/radio/feed"><img src="http://hughstimson.org/files/feed.png" id="feed">podcast</a><br />
 		</p>
 	</div>		
-</div> <!--radioHeader -->
+</div> <!--radio-header -->
 <div class="row">
-	<?php query_posts('cat=14&posts_per_page=-1'); ?>	
+	<div class="side-bar" id="host-profiles">
+		<h1 class="back-link"><a href="<?php bloginfo('url'); ?>/projects/radio"><span class="nav-arrow">&larr;</span> radio</a></h1>
+	</div><!--side-bar-->
+	<?php query_posts('cat=14&posts_per_page=-1'); ?>
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-				<div class="contentWithSidebar post" id="post-<?php the_ID(); ?>">
+				<div class="content-with-sidebar post" id="post-<?php the_ID(); ?>">
 					<div class="metadata">
 						<div class="bar"></div>
 						<div class="date">
 							<?php the_time('j M Y') ?>
 						</div>
-						<div class="commentsLink">
+						<div class="comments-link">
 							<?php comments_popup_link ('comment', '<span class="blue">1</span> comment', '<span class="blue">%</span> comments', ''); ?>
 						</div>
 						<div>
@@ -40,7 +43,7 @@ Template Name: djhugonaut
 						</div>
 					</div><!-- entry -->
 					<?php trackback_rdf(); ?>
-					<div class="commentsThread">
+					<div class="comments-thread">
 						<?php comments_template(); ?>
 					</div>
 			</div><!-- post -->
@@ -49,7 +52,7 @@ Template Name: djhugonaut
 		<p class="center">Sorry, but you are looking for something that isn't here.</p>
 		<!-- <?php include (TEMPLATEPATH . "/searchform.php"); ?> -->
 	<?php endif; ?>
-	<div class="contentWithDoubleSidebar" id="postsNav">
+	<div class="content-with-double-sidebar" id="posts-nav">
 		<h1><?php posts_nav_link(' &#183; ', '&larr; newer posts', 'older posts &rarr;'); ?></h1>
 	</div>
 </div><!--row-->

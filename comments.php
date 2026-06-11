@@ -18,14 +18,14 @@
 <!-- You can start editing here. -->
 
 <?php if ( have_comments() ) : ?>
-<h1 id="comments" class="contentWithDoubleSidebar"><?php comments_number('no comments', '1 comment:', '% comments:' );?> </h1>
+<h1 id="comments" class="content-with-double-sidebar"><?php comments_number('no comments', '1 comment:', '% comments:' );?> </h1>
 
 	<div class="navigation">
 		<div class="alignleft"><?php previous_comments_link() ?></div>
 		<div class="alignright"><?php next_comments_link() ?></div>
 	</div>
 
-	<div class="contentWithSidebar">
+	<div class="content-with-sidebar">
 	<!-- wp_list_comments styling is in gothic_comment function in functions.php -->
 	<?php wp_list_comments('callback=gothic_comment'); ?> 
 	</div>
@@ -49,7 +49,7 @@
 
 <?php if ( comments_open() ) : ?>
 
-<div id="respond" class="contentWithDoubleSidebar">
+<div id="respond" class="content-with-double-sidebar">
 
 	<h1><?php comment_form_title( 'leave a comment', 'leave a comment' ); ?></h1>
 	
@@ -88,7 +88,7 @@
 	<?php endif; ?>
 	
 	<!--<p><small><strong>XHTML:</strong> You can use these tags: <code><?php echo allowed_tags(); ?></code></small></p>-->
-	<p><textarea name="comment" id="commentBox" tabindex="4"></textarea></p>
+	<p><textarea name="comment" id="comment-box" tabindex="4"></textarea></p>
 	
 	<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
 	<?php comment_id_fields(); ?>

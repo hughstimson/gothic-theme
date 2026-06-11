@@ -4,19 +4,19 @@ Template Name: project
 */
 ?>
 <?php get_header(); ?>
-<div class="row" id="projectPage">
-	<div class="sideBar">		
-			<h1 class="backLink"><a href="<?php bloginfo('url'); ?>/projects"><span class="navArrow">&larr;</span> projects</a></h1>
-	</div><!--sideBar-->
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-				<div class="contentWithSidebar post" id="post-<?php the_ID(); ?>">
+<div class="row" id="project-page">
+	<div class="side-bar">
+			<h1 class="back-link"><a href="<?php bloginfo('url'); ?>/projects"><span class="nav-arrow">&larr;</span> projects</a></h1>
+	</div><!--side-bar-->
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				<div class="content-with-sidebar post" id="post-<?php the_ID(); ?>">
 					<div class="metadata">
 						<div class="bar"></div>
 						status: <span class="status">
 							<?php
 								$mykey_values = get_post_custom_values('status');
 								foreach ( $mykey_values as $key => $value ) {
-									echo "$value"; 
+									echo "$value";
 								}
 							?>
 						</span><br />
@@ -25,7 +25,7 @@ Template Name: project
 						<?php
 							$mykey_values = get_post_custom_values('topic');
 							foreach ( $mykey_values as $key => $value ) {
-								echo "<li>$value, </li>"; 
+								echo "<li>$value</li>";
 							}
 						?>
 						</ul>
