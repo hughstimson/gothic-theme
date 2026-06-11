@@ -15,7 +15,7 @@ get_header(); ?>
 		</p>
 	</div>		
 </div> <!--radio-header -->
-<div class="row collapsible-sidebar narrow">
+<div class="row">
 	<div class="side-bar" id="host-profiles">
 		<h1 class="back-link"><a href="<?php bloginfo('url'); ?>/hotinhere"><span class="nav-arrow">&larr;</span> all episodes</a></h1>
 		<p> </p>

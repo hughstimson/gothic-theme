@@ -4,7 +4,7 @@ Template Name: projects
 */
 ?>
 <?php get_header(); ?>
-<div class="row collapsible-sidebar">
+<div class="row">
 	<div class="side-bar">
 			<h1>Topics</h1>
 			<ul class="topics">

@@ -4,7 +4,7 @@ Template Name: projects - complex systems
 */
 ?>
 <?php get_header(); ?>
-<div class="row collapsible-sidebar">
+<div class="row">
 	<div class="side-bar">
 			<h1 class="back-link"><a href="<?php bloginfo('url'); ?>/projects">&larr; projects</a></h1>
 	</div><!--side-bar-->

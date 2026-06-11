@@ -4,7 +4,7 @@ Template Name: about
 */
 ?>
 <?php get_header(); ?>
-<div class="row collapsible-sidebar narrow">
+<div class="row">
 	<div class="side-bar">
 		<div class="page-nav">
 			<h1><a href="#blurb">Blurb</a></h1>

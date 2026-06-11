@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="row collapsible-sidebar narrow">
+<div class="row">
 	<div class="side-bar">
 			<h1 class="back-link"><a href="<?php bloginfo('url'); ?>">&larr; back to blog</a></h1>
 			<p>showing posts in <span class="topics"><?php single_cat_title(); ?></span></p>

@@ -98,17 +98,17 @@ body {
    with the site links in the banner).
    */
 @media (max-width: 1070px) {
-	.row.collapsible-sidebar {
+	.row {
 		grid-template-columns: 50px 0 120px 50px minmax(0, 1fr) 50px;
 		/* gutter | (sidebar removed) | metadata | gap | content | gutter */
 		}
 
-	.row.collapsible-sidebar .content-with-sidebar {
+	.row .content-with-sidebar {
 		grid-template-columns: 120px 50px minmax(0, 1fr);
 		/* metadata | gap | content */
 		}
 
-	.row.collapsible-sidebar .side-bar {
+	.row .side-bar {
 		display: none;
 		}
 
@@ -116,12 +116,12 @@ body {
 	   bar's and thumbnail's 50px left indent so they fill it from the
 	   margin. Metadata text stays right-aligned (the bar, its leftmost
 	   element, lines up with the banner content). */
-	.row.collapsible-sidebar .metadata .bar,
-	.row.collapsible-sidebar img.attachment-post-thumbnail {
+	.row .metadata .bar,
+	.row img.attachment-post-thumbnail {
 		margin-left: 0;
 		}
 
-	#project-page.row.collapsible-sidebar .text .callout:first-child {
+	#project-page.row .text .callout:first-child {
 		float: none;
 		width: auto;
 		margin: 10px 0 16px 0;
@@ -132,7 +132,7 @@ body {
 	   lay the header out as a flex row so the title/blurb sits beside the
 	   photo while there's room, and wraps beneath it once the row is too
 	   narrow for both (not forced while both fit). The posts below follow
-	   the article pattern via the content row's "collapsible-sidebar". */
+	   the article pattern via the shared row rules. */
 	#radio-header {
 		display: flex;
 		flex-wrap: wrap;
@@ -158,22 +158,22 @@ body {
    being active.
    */
 @media (max-width: 870px) {
-	.row.narrow {
+	.row {
 		grid-template-columns: 50px 0 0 0 minmax(0, 1fr) 50px;
 		/* gutter | (sidebar) | (metadata) | (gap) | content | gutter */
 		}
 
-	.row.narrow .side-bar {
+	.row .side-bar {
 		display: none;
 		}
 
 	/* stack the metadata above the entry instead of beside it */
-	.row.narrow .content-with-sidebar {
+	.row .content-with-sidebar {
 		display: block;
 		}
 
 	/* metadata: a single left-aligned horizontal row (date, tags, comments) */
-	.row.narrow .metadata {
+	.row .metadata {
 		text-align: left;
 		margin-bottom: 8px;
 		}
@@ -181,37 +181,37 @@ body {
 	/* Every metadata item (date, tags, comments, the logged-in edit link)
 	   flows inline, so the whole row reflows as one span and the tags wrap
 	   with everything else instead of stacking inside the topics block */
-	.row.narrow .metadata > * {
+	.row .metadata > * {
 		display: inline;
 		margin-right: 14px;
 		}
 
-	.row.narrow .metadata .topics li {
+	.row .metadata .topics li {
 		display: inline;
 		}
 
-	.row.narrow .metadata .topics li:not(:last-child)::after {
+	.row .metadata .topics li:not(:last-child)::after {
 		content: ", ";
 		}
 
 	/* No dotted bar above the metadata row */
-	.row.narrow .metadata .bar {
+	.row .metadata .bar {
 		display: none;
 		}
 
 	/* About page: the contact panel (its metadata) reflows with the mugshot
 	   floated left and the detail paragraphs stacked vertically to its
 	   right, left-aligned against the image */
-	.row.narrow #contact {
+	.row #contact {
 		display: flow-root;
 		}
 
-	.row.narrow #contact > a {
+	.row #contact > a {
 		float: left;
 		margin-right: 14px;
 		}
 
-	.row.narrow #contact > p {
+	.row #contact > p {
 		display: block;
 		}
 	}
