@@ -8,64 +8,42 @@
 			<!-- <h1><img src="<?php bloginfo('template_url'); ?>/images/triangleRight.png" />Topics</h1> -->
 		</div>
 	</div><!--side-bar-->
+    <?php /*
+            Category 14 = "radio" (DJ Hugonaut, I think), 25 = Hot in Here, 71 = tweets.
+            No special handling of Mountain Pine Beats here?
+            An overall refactoring to a modern taxonomy system is probably warranted.
+    */ ?>
 	<?php query_posts($query_string . '&cat=-14,-25,-71'); ?>
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		<!-- if it's a tweet display this way - except I removed tweets in the arguments in the above query, because I don't like them anymore -->
-		<?php if ( in_category('71') ) { ?>
-			<div class="content-with-sidebar post tweet" id="post-<?php the_ID(); ?>">
-				<div class="metadata">
-					<div class="bar"></div>
-					<div class="date"><?php the_time('j M Y') ?></div>
-					<ul class="topics">
-					<?php
-					foreach((get_the_category()) as $category) {
-						 if ($category->cat_name != 'Uncategorized') {echo '<li><a href="'. get_category_link( $category->term_id ).'" title="' . sprintf( __( "View all posts in %s" ), $category->name ).'"'.'>'.$category->name.'</a></li>'; } }
-					?>
-					</ul>
-					<div>
-						<?php edit_post_link('edit', '', ''); ?>
-					</div>
-				</div><!--metadata-->
-				<div class="entry">
-					<div class="text">
-						<a href="http://twitter.com/#!/hughstimson" class="tweet-bird"><img src="<?php bloginfo('template_url'); ?>/images/tweet.png" class="tweet-bird" /></a>
-						<?php the_content('Read the rest of this entry &raquo;'); ?>
-					</div>
-				</div><!-- entry -->
-				<?php trackback_rdf(); ?>
-			</div><!-- post -->
-		<!-- for all other (non-tweet) posts display the normal way -->
-		<?php } else { ?>
-			<div class="content-with-sidebar post" id="post-<?php the_ID(); ?>">
-				<div class="metadata">
-					<div class="bar"></div>
-					<div class="date">
-						<?php the_time('j M Y') ?>
-					</div>
-					<ul class="topics">
-					<?php
-					foreach((get_the_category()) as $category) {
-						 if ($category->cat_name != 'Uncategorized') {echo '<li><a href="'. get_category_link( $category->term_id ).'" title="' . sprintf( __( "View all posts in %s" ), $category->name ).'"'.'>'.$category->name.'</a></li>'; } }
-					?>
-					</ul>
-					<div class="comments-link">
-						<?php comments_popup_link ('comment', '<span class="blue">1</span> comment', '<span class="blue">%</span> comments', ''); ?>
-					</div>
-					<div>
-						<?php edit_post_link('edit', '', ''); ?>
-					</div>
-				</div><!--metadata-->
-				<div class="entry">
-					<h2>
-						<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
-					</h2>
-					<div class="text">
-						<?php the_content('Read the rest of this entry &raquo;'); ?>
-					</div>
-				</div><!-- entry -->
-				<?php trackback_rdf(); ?>
-			</div><!-- post -->
-		<?php } ?>
+		<div class="content-with-sidebar post" id="post-<?php the_ID(); ?>">
+			<div class="metadata">
+				<div class="bar"></div>
+				<div class="date">
+					<?php the_time('j M Y') ?>
+				</div>
+				<ul class="topics">
+				<?php
+				foreach((get_the_category()) as $category) {
+					 if ($category->cat_name != 'Uncategorized') {echo '<li><a href="'. get_category_link( $category->term_id ).'" title="' . sprintf( __( "View all posts in %s" ), $category->name ).'"'.'>'.$category->name.'</a></li>'; } }
+				?>
+				</ul>
+				<div class="comments-link">
+					<?php comments_popup_link ('comment', '<span class="blue">1</span> comment', '<span class="blue">%</span> comments', ''); ?>
+				</div>
+				<div>
+					<?php edit_post_link('edit', '', ''); ?>
+				</div>
+			</div><!--metadata-->
+			<div class="entry">
+				<h2>
+					<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
+				</h2>
+				<div class="text">
+					<?php the_content('Read the rest of this entry &raquo;'); ?>
+				</div>
+			</div><!-- entry -->
+			<?php trackback_rdf(); ?>
+		</div><!-- post -->
 	<?php endwhile; else : ?>
 		<h2 class="center">Not Found</h2>
 		<p class="center">Sorry, but you are looking for something that isn't here.</p>

@@ -620,34 +620,6 @@ blockquote {
 	margin-bottom: 90px;
 	}
 
-.tweet {
-	margin-bottom: 0;
-	}
-
-img.tweet-bird {
-	display: inline !important;
-	border-width: 0px !important;
-	background-color: transparent !important;
-	padding: 0 7px 0 0 !important;
-	margin: 0 0 0px 0 !important;
-	}
-
-a.tweet-bird,
-a.tweet-bird:hover {
-	border: 0px;
-	}
-
-.tweet p {
-	display: inline;
-	}
-
-/*
-.tweet p:after {
-	content:url(images/tweet.png);
-	padding-left: 5px;
-}
-*/
-
 .image {
 	text-align: center;
 	font-style: italic;
