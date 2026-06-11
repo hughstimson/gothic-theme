@@ -395,14 +395,11 @@ h4 {
 }
 
 .text a:hover,
-.text a:visited,
-.comment a:hover,
-.comment a:visited {
+.comment a:hover {
 	border-bottom: 1px dotted #3AA9C7;
 	}
 
 .side-bar a:hover,
-.side-bar a:visited ,
 .zp-admin-links a:hover {
 	border-bottom: 1px solid black;
 }
@@ -660,10 +657,7 @@ a.tweet-bird:hover {
 	line-height: 30px;
 	}
 
-.image a,
-.image a:visited,
-.image a:hover,
-.image a:active {
+.image a {
 	border-bottom: 0 none;
 	}
 
@@ -816,8 +810,7 @@ img.attachment-post-thumbnail {
 	margin: 0;
 	}
 
-a:link > img.attachment-post-thumbnail,
-a:visited > img.attachment-post-thumbnail {
+a > img.attachment-post-thumbnail {
 	border-width: 1px;
 	border-style: solid;
 	border-color: #86847B;
