@@ -941,5 +941,7 @@ table.radio-playlist td.radio-playlist-label {
 	background-color: #D6D6D6;
 	border: 1px solid #B0B0B0;
 	margin: 15px  0 8px -4px;
-	max-width: 630px;
+	box-sizing: border-box;
+	max-width: 100%;
+	height: auto;
 }
