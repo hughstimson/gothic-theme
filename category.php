@@ -5,7 +5,7 @@
 			<p>showing posts in <span class="topics"><?php single_cat_title(); ?></span></p>
 	</div><!--side-bar-->
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-				<div class="content-and-meta" id="post-<?php the_ID(); ?>">
+				<div class="post" id="post-<?php the_ID(); ?>">
 					<div class="meta">
 						<div class="bar"></div>
 						<div class="date">
@@ -24,7 +24,7 @@
 							<?php edit_post_link('edit', '', ''); ?>
 						</div>
 					</div><!--metadata-->
-					<div class="post">
+					<div class="content">
 						<h2>
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 						</h2>

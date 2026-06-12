@@ -21,7 +21,7 @@ Template Name: djhugonaut
 	</div><!--side-bar-->
 	<?php query_posts('cat=14&posts_per_page=-1'); ?>
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-				<div class="content-and-meta" id="post-<?php the_ID(); ?>">
+				<div class="post" id="post-<?php the_ID(); ?>">
 					<div class="meta">
 						<div class="bar"></div>
 						<div class="date">
@@ -34,7 +34,7 @@ Template Name: djhugonaut
 							<?php edit_post_link('edit', '', ''); ?>
 						</div>
 					</div><!--metadata-->
-					<div class="post radio">
+					<div class="content radio">
 						<h2>
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 						</h2>

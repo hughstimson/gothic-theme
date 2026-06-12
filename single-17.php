@@ -4,7 +4,7 @@
 			<h1 class="back-link"><a href="<?php bloginfo('url'); ?>"><span class="nav-arrow">&larr;</span> projects</a></h1>
 	</div><!--side-bar-->
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-				<div class="content-and-meta" id="post-<?php the_ID(); ?>">
+				<div class="post" id="post-<?php the_ID(); ?>">
 					<div class="meta">
 						<div class="bar"></div>
 						status: <span class="status">
@@ -25,7 +25,7 @@
 							<?php edit_post_link('edit', '', ''); ?>
 						</div>
 					</div><!--metadata-->
-					<div class="post">
+					<div class="content">
 						<h2>
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 						</h2>

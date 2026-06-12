@@ -45,7 +45,7 @@ body {
 .row {
 	display: grid;
 	/* Column widths. The metadata | gap | post sub-split is reused per post
-	   by .post-and-metadata, so both grids read these same variables; a width
+	   by .post, so both grids read these same variables; a width
 	   that collapses at a breakpoint is then changed in just one place below.
 	   Eventually this can be further simplified by implementing a nested grid,
 	   available in browsers since 2023. Keeping it backwards-compatible for now.
@@ -90,7 +90,7 @@ body {
 	text-align: left;
 	}
 
-.content-and-meta {
+.post {
 	grid-column: 3 / 6;
 	display: grid;
 	grid-template-columns: var(--col-meta, 170px) var(--col-gap, 50px) minmax(0, 1fr);
@@ -100,11 +100,11 @@ body {
 	margin-bottom: 90px;   /* per-post-block spacing, folded from the old .post */
 	}
 
-.content-and-meta > * {
+.post > * {
 	grid-column: 3;
 	}
 
-.content-and-meta > .meta {
+.post > .meta {
 	grid-column: 1;
 	}
 
@@ -165,7 +165,7 @@ body {
 		}
 
 	/* stack the metadata above the entry instead of beside it */
-	.row .content-and-meta {
+	.row .post {
 		display: block;
 		}
 
@@ -604,14 +604,14 @@ blockquote p {
 	margin: 0 30px 15px 30px;
 	}
 
-.post .text,
+.content .text,
 .comment-and-reply .text {
 	margin-bottom: 0px;
 	}
 
 /* grid items form a BFC, so the last line's bottom margin no longer collapses
    into the block's margin-bottom; drop it to keep spacing identical */
-.post .text > :last-child,
+.content .text > :last-child,
 .comment-and-reply .text > :last-child {
 	margin-bottom: 0;
 	}

@@ -24,7 +24,7 @@ Template Name: projects
 	query_posts('post_type=page&meta_key=topic&posts_per_page=-1'); 
 	 while (have_posts()) : the_post();
 	?>
-	<div class="content-and-meta project">
+	<div class="post project">
 		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 		<div class="description">
 			<h2>

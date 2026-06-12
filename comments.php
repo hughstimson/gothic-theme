@@ -18,7 +18,7 @@ if ( post_password_required() ) : ?>
 		</div>
 	<?php endif; ?>
 
-	<div class="content-and-meta comment-list">
+	<div class="post comment-list">
 		<?php
 		wp_list_comments( array(
 			'callback'     => 'gothic_comment',
