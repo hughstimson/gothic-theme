@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="row">
+<div id="main" class="row">
 	<div class="sidebar">
 		<div class="page-nav">
 			<?php include (TEMPLATEPATH . '/searchform.php'); ?>

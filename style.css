@@ -137,7 +137,7 @@ body {
 		display: none;
 		}
 
-	#project-page.row .text .callout:first-child {
+	.project-page.row .text .callout:first-child {
 		float: none;
 		width: auto;
 		margin: 10px 0 16px 0;
@@ -815,7 +815,7 @@ a:hover > img.attachment-post-thumbnail {
 	margin-bottom: 8px;
 	}
 
-#project-page .text .callout img {
+.project-page .text .callout img {
 	border-style: none;
 	border-width: 0;
 	}
@@ -928,7 +928,7 @@ table.radio-playlist td.radio-playlist-label {
 
 /* 404 ----------------------------------------------------------- */
 
-#fourohfour h2 {
+.fourohfour h2 {
 	font-size: 300px;
 	color: #40badb;
 	}

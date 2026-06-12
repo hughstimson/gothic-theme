@@ -4,7 +4,7 @@ Template Name: project
 */
 ?>
 <?php get_header(); ?>
-<div class="row" id="project-page">
+<div id="main" class="row project-page">
 	<div class="sidebar">
 			<h1 class="back-link"><a href="<?php bloginfo('url'); ?>/projects"><span class="nav-arrow">&larr;</span> projects</a></h1>
 	</div><!--side-bar-->

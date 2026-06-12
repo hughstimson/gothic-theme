@@ -4,7 +4,7 @@ Template Name: about
 */
 ?>
 <?php get_header(); ?>
-<div class="row">
+<div id="main" class="row">
 	<div class="sidebar">
 		<div class="page-nav">
 			<h1><a href="#blurb">Blurb</a></h1>
