@@ -42,12 +42,12 @@ get_header(); ?>
 						<div>
 							<?php edit_post_link('edit', '', ''); ?>
 						</div>
-					</div><!--metadata-->
-					<div class="content radio">
+					</div>
+					<div class="content">
 						<h2>
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 						</h2>
-						<div class="text radio">
+						<div class="text">
 							<?php the_content('Read the rest of this entry &raquo;'); ?>
 						</div>
 					</div><!-- entry -->
