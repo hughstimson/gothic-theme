@@ -29,8 +29,8 @@ get_header(); ?>
 		<p>likewise</p>
 	</div><!--side-bar-->
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-				<div class="content-and-metadata" id="post-<?php the_ID(); ?>">
-					<div class="metadata">
+				<div class="content-and-meta" id="post-<?php the_ID(); ?>">
+					<div class="meta">
 						<div class="bar"></div>
 						<div class="date">
 							<?php the_time('j M Y') ?>

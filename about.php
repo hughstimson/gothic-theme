@@ -14,8 +14,8 @@ Template Name: about
 <!--			<h1><a href="#flag">Flag</a></h1> -->
 		</div><!--page-nav-->
 	</div><!--sidebar-->
-	<div class="content-and-metadata">
-		<div class="metadata" id="contact">
+	<div class="content-and-meta">
+		<div class="meta" id="contact">
 		<a href="http://hughstimson.org/photos/sprucelake/self+portrait+with+alpine.jpg.php" alt="mugshot" title="self portrait with alpine"><img src="<?php bloginfo('template_url'); ?>/images/alpineprofile.jpg" /></a>
 		<p><a href="mailto:hugh@hughstimson.org">hugh@hughstimson.org</a></p>
 		<p>604.440.1989 (new!)</p>

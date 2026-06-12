@@ -1,4 +1,4 @@
-<div class="metadata">
+<div class="meta">
 	<div class="avatar">
 		<?php echo get_avatar( $comment, 64, 'identicon' ); ?><br />
 	</div>

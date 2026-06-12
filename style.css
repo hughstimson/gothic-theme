@@ -56,7 +56,7 @@ body {
 	--col-gap: 50px;
 	grid-template-columns:
 		var(--col-gutter) var(--col-sidebar) var(--col-meta) var(--col-gap) minmax(0, 1fr) var(--col-gutter);
-	/* gutter | sidebar | metadata | gap | post | gutter */
+	/* gutter | sidebar | meta | gap | content | gutter */
 	align-items: start;
 	max-width: 1070px;
 	margin: 0 auto;
@@ -90,7 +90,7 @@ body {
 	text-align: left;
 	}
 
-.content-and-metadata {
+.content-and-meta {
 	grid-column: 3 / 6;
 	display: grid;
 	grid-template-columns: var(--col-meta, 170px) var(--col-gap, 50px) minmax(0, 1fr);
@@ -100,11 +100,11 @@ body {
 	margin-bottom: 90px;   /* per-post-block spacing, folded from the old .post */
 	}
 
-.content-and-metadata > * {
+.content-and-meta > * {
 	grid-column: 3;
 	}
 
-.content-and-metadata > .metadata {
+.content-and-meta > .meta {
 	grid-column: 1;
 	}
 
@@ -165,12 +165,12 @@ body {
 		}
 
 	/* stack the metadata above the entry instead of beside it */
-	.row .content-and-metadata {
+	.row .content-and-meta {
 		display: block;
 		}
 
 	/* metadata: a single left-aligned horizontal row (date, tags, comments) */
-	.row .metadata {
+	.row .meta {
 		text-align: left;
 		margin-bottom: 8px;
 		}
@@ -178,21 +178,21 @@ body {
 	/* Every metadata item (date, tags, comments, the logged-in edit link)
 	   flows inline, so the whole row reflows as one span and the tags wrap
 	   with everything else instead of stacking inside the topics block */
-	.row .metadata > * {
+	.row .meta > * {
 		display: inline;
 		margin-right: 14px;
 		}
 
-	.row .metadata .topics li {
+	.row .meta .topics li {
 		display: inline;
 		}
 
-	.row .metadata .topics li:not(:last-child)::after {
+	.row .meta .topics li:not(:last-child)::after {
 		content: ", ";
 		}
 
 	/* No dotted bar above the metadata row */
-	.row .metadata .bar {
+	.row .meta .bar {
 		display: none;
 		}
 
@@ -233,7 +233,7 @@ body {
 h1,
 h3,
 .sidebar,
-.metadata,
+.meta,
 .project .status,
 #searchform input,
 .topics,
@@ -551,7 +551,7 @@ ol ol {
 
 /* blog ---------------------------------------------------------- */
 
-.metadata {
+.meta {
 	text-align: right;
 	color: black;
 	}
@@ -562,7 +562,7 @@ ol ol {
 	border-style: dotted;
 	}
 
-.metadata .bar {
+.meta .bar {
 	/* a 120px dotted rule, kept flush-right in the metadata column with an
 	   auto left margin. The column is 170px at full width and 120px at
 	   intermediate width; the auto margin handles both, so no per-width
@@ -572,21 +572,21 @@ ol ol {
 	margin-bottom: 4px;
 	}
 
-.metadata .date {
+.meta .date {
 	color: black;
 	}
 
-.metadata .date,
-.metadata .status {
+.meta .date,
+.meta .status {
 	font-weight: bold;
 	}
 
-.metadata a {
+.meta a {
 	color: black;
 	text-decoration: none;
 	}
 
-.metadata a:hover {
+.meta a:hover {
 	border-bottom: 1px solid black;
 	}
 
@@ -664,7 +664,7 @@ blockquote p {
 	text-decoration: none;
 	}
 
-.metadata .topics a:hover {
+.meta .topics a:hover {
 	border-bottom: 1px solid #86847B;
 	}
 
@@ -768,7 +768,7 @@ h1#comments,
 	color: black;
 	}
 
-.metadata .comment-author a {
+.meta .comment-author a {
 color: black;
 }
 

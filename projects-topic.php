@@ -17,7 +17,7 @@ if ( ! isset( $gothic_project_topic ) ) {
 	) );
 	 while (have_posts()) : the_post();
 	?>
-	<div class="content-and-metadata project">
+	<div class="content-and-meta project">
 		<?php the_post_thumbnail(); ?>
 		<div class="description">
 			<h2>
