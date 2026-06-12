@@ -19,7 +19,7 @@ if ( ! isset( $gothic_project_topic ) ) {
 	?>
 	<div class="post project">
 		<?php the_post_thumbnail(); ?>
-		<div class="description">
+		<div class="content">
 			<h2>
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			</h2>
@@ -41,7 +41,7 @@ if ( ! isset( $gothic_project_topic ) ) {
 				</ul>
 			</div>
 			<?php the_excerpt(); ?>
-			</div><!--descrtiption-->
+			</div>
 		</div><!-- project -->
 	<?php endwhile; ?>
 	<div id="posts-nav">

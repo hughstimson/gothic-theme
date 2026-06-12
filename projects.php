@@ -26,7 +26,7 @@ Template Name: projects
 	?>
 	<div class="post project">
 		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-		<div class="description">
+		<div class="content">
 			<h2>
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			</h2>				 
@@ -48,7 +48,7 @@ Template Name: projects
 				</ul>
 			</div>
 			<?php the_excerpt(); ?>
-			</div><!--descrtiption-->
+			</div>
 		</div><!-- project -->	
 	<?php endwhile; ?>
 	<div id="posts-nav">
