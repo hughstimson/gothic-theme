@@ -25,7 +25,7 @@
 	<?php wp_head(); ?>
 </head>
 <body>
-<div class="row" id="banner">
+<div id="banner">
 	<div id="hughstimsonorg">
 		<a href="<?php bloginfo('url'); ?>">
 		<img width="63" height="32" src="<?php bloginfo('template_url'); ?>/images/flag.png" /><span id="hughstimson">hughStimson</span><span id="org">.org</span>

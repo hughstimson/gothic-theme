@@ -4,7 +4,7 @@ Template Name: projects
 */
 ?>
 <?php get_header(); ?>
-<div class="row" id="main">
+<div id="main">
 	<div class="sidebar">
 			<h1>Topics</h1>
 			<ul class="topics">

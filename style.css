@@ -13,23 +13,18 @@ Theme Name: gothic green
          url('fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 /* Layout --------------------------------------------------------
 
-	Semantically,
-	row     = Vertical split in the flow. In practice there may only be two or three
-	          per page. Retiring row is a possible future consideration.
-	post    = Wordpress conception of a "post":
-	          id, date, status, taxonomy (i.e. category), title, content, comments.
-	meta    = Subset of the information in a post: date, taxonomy, status.
-	content = Subset of the information in a post: title, content, comments.
-	sidebar = Auxiliarly element used for optional stuff like back-links and search.
+	There are (currently) three vertically stacking sections that each page can contain:
+	#banner, #radio-header, #main.
 
-	Ideally all the other classes can be derived as combinations of the above
-	(plus some special cases like "radio-header-text").
-*/
+	Others could be added (#footer?).
+
+	Every page (currently) has the #banner and #main sections.
+
+	Each section can follow a separate layout implementation, so long as they look visually coherent. */
 
 * {
 	margin: 0;
@@ -42,14 +37,54 @@ body {
 	border-color: black;
 	}
 
-.row {
+/* The banner uses flex layout. Wordmark on the left, site links on the right.
+   When there isn't horizontal room for both, the links wrap to a left-aligned block
+   directly beneath the wordmark. */
+
+#banner {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	column-gap: 30px;   /* minimum space between the two before they wrap */
+	box-sizing: border-box;
+	padding: 0 50px;
+	max-width: 1070px;
+	margin: 0 auto;
+	}
+
+/* The radio-show header uses grid. Photo on the left, show details on the right.
+   Lives here (above the media queries) so the 870px overrides win on source
+   order now that the .row specificity boost is gone. */
+#radio-header {
 	display: grid;
-	/* Column widths. The metadata | gap | post sub-split is reused per post
-	   by .post, so both grids read these same variables; a width
+	grid-template-columns: 50px auto 50px minmax(0, 1fr) 50px;
+	align-items: start;
+	max-width: 1070px;
+	margin: 0 auto 50px;
+	}
+
+#radio-header > #radio-header-text {
+	grid-column: 4 / 5;
+	}
+
+/*  Within #main, layout is handled via grid placement, and follows this semantic system:
+
+	post    = Wordpress conception of a "post":
+	          id, date, status, taxonomy (i.e. category), title, content, comments.
+	meta    = Subset of the information in a post: date, taxonomy, status.
+	content = Subset of the information in a post: title, content, comments.
+	sidebar = Auxiliarly element used for optional stuff like back-links and search.
+
+	Ideally all the other classes can be derived as combinations of the above. */
+
+#main {
+	display: grid;
+	/* Column widths. The metadata | gap | post sub-split is reused by .post,
+	   so both grids read these same variables; a width
 	   that collapses at a breakpoint is then changed in just one place below.
 	   Eventually this can be further simplified by implementing a nested grid,
-	   available in browsers since 2023. Keeping it backwards-compatible for now.
-	   */
+	   available in browsers since 2023. Keeping it backwards-compatible for now. */
 	--col-gutter: 50px;
 	--col-sidebar: 120px;
 	--col-meta: 170px;
@@ -60,26 +95,15 @@ body {
 	align-items: start;
 	max-width: 1070px;
 	margin: 0 auto;
-	}
+}
 
-/* The banner: wordmark on the left, site links on the right. When there
-   isn't horizontal room for both, the links wrap to a left-aligned block
-   directly beneath the wordmark. */
-#banner.row {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: flex-start;
-	column-gap: 30px;   /* minimum space between the two before they wrap */
-	box-sizing: border-box;
-	padding: 0 50px;
-	}
-
-/*  Catch-all so any unanticipated element in a row lands in the post column
-    rather than breaking out into the gutter. */
-.row > * {
+/* Catch-all so any unanticipated element in #main lands in the content column
+   rather than breaking out into the gutter. :where() keeps this at zero
+   specificity so the specific placements below (.sidebar, .post) still win,
+   the way the old class-level .row > * did. */
+:where(#main) > * {
 	grid-column: 5 / 6;
-	}
+}
 
 .sidebar {
 	grid-column: 2 / 3;
@@ -93,8 +117,8 @@ body {
 .post {
 	grid-column: 3 / 6;
 	display: grid;
+	/* meta | gap | post — the same three tracks as #main's columns 3-5 */
 	grid-template-columns: var(--col-meta, 170px) var(--col-gap, 50px) minmax(0, 1fr);
-	/* metadata | gap | post — the same three tracks as the row's columns 3-5 */
 	align-items: start;
 	min-height: 120px;
 	margin-bottom: 90px;   /* per-post-block spacing, folded from the old .post */
@@ -109,7 +133,7 @@ body {
 	}
 
 /* comment heading, form, and notices sit in the post column; they're inside
-   .comment-thread (display:contents) so the .row > * catch-all can't reach
+   .comment-thread (display:contents) so the #main > * catch-all can't reach
    them, hence the explicit placement */
 #comments,
 #respond,
@@ -126,18 +150,18 @@ body {
    */
 @media (max-width: 1070px) {
 	/* drop the left sidebar and narrow the metadata column into the freed
-	   space; both the row grid and the per-post .post-and-metadata grids
-	   follow, since they read these shared variables */
-	.row {
+	   space; both #main and the per-post .post grids follow, since they read
+	   these shared variables */
+	#main {
 		--col-sidebar: 0px;
 		--col-meta: 120px;
 		}
 
-	.row .sidebar {
+	#main .sidebar {
 		display: none;
 		}
 
-	.project-page.row .text .callout:first-child {
+	.project-page .text .callout:first-child {
 		float: none;
 		width: auto;
 		margin: 10px 0 16px 0;
@@ -146,31 +170,30 @@ body {
 
 	}
 
-/* Narrow-width variant ------------------------------------------------- */
-/* At 870px and below the metadata leaves its column and becomes a single
+/* Narrow-width variant -------------------------------------------------
+   At 870px and below the metadata leaves its column and becomes a single
    left-aligned horizontal row directly above each post's title, so the
    post column can reach the left gutter (aligned with the banner icon).
    Self-contained, so it doesn't rely on the intermediate variant also
-   being active.
-   */
+   being active. */
 @media (max-width: 870px) {
-	.row {
+	#main {
 		--col-sidebar: 0px;
 		--col-meta: 0px;
 		--col-gap: 0px;
 		}
 
-	.row .sidebar {
+	#main .sidebar {
 		display: none;
 		}
 
 	/* stack the metadata above the entry instead of beside it */
-	.row .post {
+	#main .post {
 		display: block;
 		}
 
 	/* metadata: a single left-aligned horizontal row (date, tags, comments) */
-	.row .meta {
+	#main .meta {
 		text-align: left;
 		margin-bottom: 8px;
 		}
@@ -178,51 +201,51 @@ body {
 	/* Every metadata item (date, tags, comments, the logged-in edit link)
 	   flows inline, so the whole row reflows as one span and the tags wrap
 	   with everything else instead of stacking inside the topics block */
-	.row .meta > * {
+	#main .meta > * {
 		display: inline;
 		margin-right: 14px;
 		}
 
-	.row .meta .topics li {
+	#main .meta .topics li {
 		display: inline;
 		}
 
-	.row .meta .topics li:not(:last-child)::after {
+	#main .meta .topics li:not(:last-child)::after {
 		content: ", ";
 		}
 
 	/* No dotted bar above the metadata row */
-	.row .meta .bar {
+	#main .meta .bar {
 		display: none;
 		}
 
 	/* About page: the contact panel (its metadata) reflows with the mugshot
 	   floated left and the detail paragraphs stacked vertically to its
 	   right, left-aligned against the image */
-	.row #contact {
+	#main #contact {
 		display: flow-root;
 		}
 
-	.row #contact > a {
+	#main #contact > a {
 		float: left;
 		margin-right: 14px;
 		}
 
-	.row #contact > p {
+	#main #contact > p {
 		display: block;
 		}
 
-	#radio-header.row {
+	#radio-header {
 		grid-template-columns: 50px minmax(0, 1fr) 50px;
 		row-gap: 16px;
 		}
 
-	#radio-header.row > #hotinhere-staff,
-	#radio-header.row > #radio-header-text {
+	#radio-header > #hotinhere-staff,
+	#radio-header > #radio-header-text {
 		grid-column: 2 / 3;
 		}
 
-	#radio-header.row > #hotinhere-staff {
+	#radio-header > #hotinhere-staff {
 		max-width: 100%;
 		height: auto;
 		}
@@ -822,18 +845,9 @@ a:hover > img.attachment-post-thumbnail {
 
 /* Radio shows ----------------------------------------------- */
 
-#radio-header {
-	grid-template-columns: 50px auto 50px minmax(0, 1fr) 50px;
-	margin-bottom: 50px;
-	}
-
 img#hotinhere-staff {
 	grid-column: 2 / 3;
 	border: 1px solid darkgrey;
-	}
-
-#radio-header > #radio-header-text {
-	grid-column: 4 / 5;
 	}
 
 #radio-title {

@@ -3,7 +3,7 @@
 Template Name: hotinhere-single
 */
 get_header(); ?>
-<div class="row" id="radio-header">
+<div id="radio-header">
 	<img id="hotinhere-staff" src="<?php bloginfo('template_url'); ?>/images/ihihstaff.jpg" />
 	<div id="radio-header-text">
 		<div id="radio-title">It's Hot In Here</div>
@@ -15,7 +15,7 @@ get_header(); ?>
 		</p>
 	</div>		
 </div> <!--radio-header -->
-<div id="main" class="row">
+<div id="main">
 	<div class="sidebar" id="host-profiles">
 		<h1 class="back-link"><a href="<?php bloginfo('url'); ?>/hotinhere"><span class="nav-arrow">&larr;</span> all episodes</a></h1>
 		<p> </p>

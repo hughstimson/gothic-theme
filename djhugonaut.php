@@ -4,7 +4,7 @@ Template Name: djhugonaut
 */
 ?>
 <?php get_header(); ?>
-<div class="row" id="radio-header">
+<div id="radio-header">
 	<img id="hotinhere-staff" src="<?php bloginfo('template_url'); ?>/images/wcbnboard.jpg" />
 	<div id="radio-header-text">
 		<div id="radio-title" style="margin:0 0 10px 0;">dj Hugonaut</div>
@@ -15,7 +15,7 @@ Template Name: djhugonaut
 		</p>
 	</div>		
 </div> <!--radio-header -->
-<div id="main" class="row">
+<div id="main">
 	<div class="sidebar" id="host-profiles">
 		<h1 class="back-link"><a href="<?php bloginfo('url'); ?>/projects/radio"><span class="nav-arrow">&larr;</span> radio</a></h1>
 	</div><!--side-bar-->
