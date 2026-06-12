@@ -845,6 +845,10 @@ a:hover > img.attachment-post-thumbnail {
 	display: inline;
 	}
 
+.project ul.topics li:not(:last-child)::after {
+	content: ", ";
+	}
+
 .project .status {
 	font-weight: normal;
 	line-height: 1;

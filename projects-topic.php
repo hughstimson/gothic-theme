@@ -35,7 +35,7 @@ if ( ! isset( $gothic_project_topic ) ) {
 					<?php
 						$mykey_values = get_post_custom_values('topic');
 						foreach ( $mykey_values as $key => $value ) {
-							echo "<li>$value, </li>";
+							echo "<li>$value</li>";
 						}
 					?>
 				</ul>
