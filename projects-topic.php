@@ -18,7 +18,7 @@ if ( ! isset( $gothic_project_topic ) ) {
 	 while (have_posts()) : the_post();
 	?>
 	<div class="post project">
-		<?php the_post_thumbnail(); ?>
+        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 		<div class="content">
 			<h2>
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
