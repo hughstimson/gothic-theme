@@ -220,6 +220,13 @@ body {
 		display: none;
 		}
 
+	/* Concede to practicality and ragged-right-align text
+	   when the view gets arbitrarily skinny? No!
+	.content .text p {
+		text-align: left;
+	}
+	 */
+
 	/* About page: the contact panel (its metadata) reflows with the mugshot
 	   floated left and the detail paragraphs stacked vertically to its
 	   right, left-aligned against the image */
@@ -956,16 +963,6 @@ table.radio-playlist td.radio-playlist-label {
 	font-size: 300px;
 	color: #40badb;
 	}
-
-/* media query --------------------------------------------------- */
-
-@media only screen and (max-device-width: 480px) {
-
-	.text p {
-	text-align: left;
-	}
-
-}
 
 /* text images */
 
