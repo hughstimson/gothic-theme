@@ -90,7 +90,7 @@ body {
 	text-align: left;
 	}
 
-.post-and-metadata {
+.content-and-metadata {
 	grid-column: 3 / 6;
 	display: grid;
 	grid-template-columns: var(--col-meta, 170px) var(--col-gap, 50px) minmax(0, 1fr);
@@ -100,11 +100,11 @@ body {
 	margin-bottom: 90px;   /* per-post-block spacing, folded from the old .post */
 	}
 
-.post-and-metadata > * {
+.content-and-metadata > * {
 	grid-column: 3;
 	}
 
-.post-and-metadata > .metadata {
+.content-and-metadata > .metadata {
 	grid-column: 1;
 	}
 
@@ -165,7 +165,7 @@ body {
 		}
 
 	/* stack the metadata above the entry instead of beside it */
-	.row .post-and-metadata {
+	.row .content-and-metadata {
 		display: block;
 		}
 

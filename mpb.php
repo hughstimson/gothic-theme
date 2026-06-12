@@ -28,7 +28,7 @@ Template Name: mpb
 	</div><!--side-bar-->
 	<?php query_posts('cat=28'); ?>	
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-				<div class="post-and-metadata" id="post-<?php the_ID(); ?>">
+				<div class="content-and-metadata" id="post-<?php the_ID(); ?>">
 					<div class="metadata">
 						<div class="bar"></div>
 						<div class="date">
