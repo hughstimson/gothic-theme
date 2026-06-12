@@ -16,7 +16,7 @@ get_header(); ?>
 	</div>		
 </div> <!--radio-header -->
 <div class="row">
-	<div class="side-bar" id="host-profiles">
+	<div class="sidebar" id="host-profiles">
 		<h1 class="back-link"><a href="<?php bloginfo('url'); ?>/projects/radio"><span class="nav-arrow">&larr;</span> radio</a></h1>
 		<p> </p>
 		<h1>your hosts:</h1>

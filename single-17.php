@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="row">
-	<div class="side-bar">
+	<div class="sidebar">
 			<h1 class="back-link"><a href="<?php bloginfo('url'); ?>"><span class="nav-arrow">&larr;</span> projects</a></h1>
 	</div><!--side-bar-->
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

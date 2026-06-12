@@ -5,7 +5,7 @@ Template Name: about
 ?>
 <?php get_header(); ?>
 <div class="row">
-	<div class="side-bar">
+	<div class="sidebar">
 		<div class="page-nav">
 			<h1><a href="#blurb">Blurb</a></h1>
 			<h1><a href="#work">Work</a></h1>

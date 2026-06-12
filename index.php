@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="row">
-	<div class="side-bar">
+	<div class="sidebar">
 		<div class="page-nav">
 			<?php include (TEMPLATEPATH . '/searchform.php'); ?>
 			<!-- <h1>Archive</h1> -->

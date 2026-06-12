@@ -16,7 +16,20 @@ Theme Name: gothic green
 
 }
 
-/* layout -------------------------------------------------------- */
+/* Layout --------------------------------------------------------
+
+	Semantically,
+	row     = Vertical split in the flow. In practice there may only be two or three
+	          per page. Retiring row is a possible future consideration.
+	post    = Wordpress conception of a "post":
+	          id, date, status, taxonomy (i.e. category), title, content, comments.
+	meta    = Subset of the information in a post: date, taxonomy, status.
+	content = Subset of the information in a post: title, content, comments.
+	sidebar = Auxiliarly element used for optional stuff like back-links and search.
+
+	Ideally all the other classes can be derived as combinations of the above
+	(plus some special cases like "radio-header-text").
+*/
 
 * {
 	margin: 0;
@@ -68,7 +81,7 @@ body {
 	grid-column: 5 / 6;
 	}
 
-.side-bar {
+.sidebar {
 	grid-column: 2 / 3;
 	grid-row: 1 / span 9999;
 	/* span all rows so a tall sidebar overlaps the content stack
@@ -120,7 +133,7 @@ body {
 		--col-meta: 120px;
 		}
 
-	.row .side-bar {
+	.row .sidebar {
 		display: none;
 		}
 
@@ -147,7 +160,7 @@ body {
 		--col-gap: 0px;
 		}
 
-	.row .side-bar {
+	.row .sidebar {
 		display: none;
 		}
 
@@ -219,7 +232,7 @@ body {
 
 h1,
 h3,
-.side-bar,
+.sidebar,
 .metadata,
 .project .status,
 #searchform input,
@@ -368,8 +381,8 @@ h4 {
 .text a,
 .text a:visited,
 .comment a,
-.side-bar a,
-.side-bar a:visited,
+.sidebar a,
+.sidebar a:visited,
 .zp-admin-links a,
 .zp-admin-links a:visited {
 	text-decoration: none;
@@ -381,8 +394,8 @@ h4 {
 	color: #3AA9C7;
 }
 
-.side-bar a,
-.side-bar a:visited,
+.sidebar a,
+.sidebar a:visited,
 .comment a,
 .zp-admin-links a,
 .zp-admin-links a:visited{
@@ -394,7 +407,7 @@ h4 {
 	border-bottom: 1px dotted #3AA9C7;
 	}
 
-.side-bar a:hover,
+.sidebar a:hover,
 .zp-admin-links a:hover {
 	border-bottom: 1px solid black;
 }
@@ -413,11 +426,11 @@ blockquote p,
 	color: #6C6A63;
 	}
 
-.side-bar p {
+.sidebar p {
 	margin-top: 30px;
 	}
 
-.side-bar p,
+.sidebar p,
 .gallery-album p {
 		line-height: 22px;
 		margin-bottom: 0.938em;
@@ -850,7 +863,7 @@ img#feed {
 	border-style: none;
 	}
 
-#host-profiles.side-bar p {
+#host-profiles.sidebar p {
 	margin-top: 0;
 	}
 

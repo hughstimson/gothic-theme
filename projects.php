@@ -5,7 +5,7 @@ Template Name: projects
 ?>
 <?php get_header(); ?>
 <div class="row">
-	<div class="side-bar">
+	<div class="sidebar">
 			<h1>Topics</h1>
 			<ul class="topics">
 				<li><a href="<?php bloginfo('url'); ?>/projects/cartography">cartography</a></li>
