@@ -725,7 +725,7 @@ ul.topics a:hover {
 
 .text .callout img{
 	padding: 0;
-	border-style: 1px solid #86847B;
+	border: 1px solid #86847B;
 	max-width: 288px;
 	}
 
