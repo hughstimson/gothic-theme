@@ -35,6 +35,7 @@ body {
 	border-width: 6px 0 0 0;
 	border-style: solid;
 	border-color: black;
+	--max-width: 1070px;
 	}
 
 /* The banner uses flex layout. Wordmark on the left, site links on the right.
@@ -49,7 +50,7 @@ body {
 	column-gap: 30px;   /* minimum space between the two before they wrap */
 	box-sizing: border-box;
 	padding: 0 50px;
-	max-width: 1070px;
+	max-width: var(--max-width);
 	margin: 0 auto;
 	}
 
@@ -60,7 +61,7 @@ body {
 	display: grid;
 	grid-template-columns: 50px auto 50px minmax(0, 1fr) 50px;
 	align-items: start;
-	max-width: 1070px;
+	max-width: var(--max-width);
 	margin: 0 auto 50px;
 	}
 
@@ -74,7 +75,7 @@ body {
 	          id, date, status, taxonomy (i.e. category), title, content, comments.
 	meta    = Subset of the information in a post: date, taxonomy, status.
 	content = Subset of the information in a post: title, content, comments.
-	sidebar = Auxiliarly element used for optional stuff like back-links and search.
+	sidebar = Auxiliarly column used for optional stuff like back-links and search.
 
 	Ideally all the other classes can be derived as combinations of the above. */
 
@@ -93,7 +94,7 @@ body {
 		var(--col-gutter) var(--col-sidebar) var(--col-meta) var(--col-gap) minmax(0, 1fr) var(--col-gutter);
 	/* gutter | sidebar | meta | gap | content | gutter */
 	align-items: start;
-	max-width: 1070px;
+	max-width: var(--max-width);
 	margin: 0 auto;
 }
 
