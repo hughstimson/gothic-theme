@@ -798,6 +798,15 @@ color: black;
 
 /* projects ------------------------------------------------------ */
 
+/* A project entry is a .post, but the space between entries comes from its
+   .description (below), not the per-post-block margin/min-height, so it opts
+   out of those (restoring the project-list spacing from before .post folded
+   that spacing into every wrapper). */
+.post.project {
+	min-height: 0;
+	margin-bottom: 0;
+	}
+
 .project .description {
 	margin-bottom: 50px;
 	}
