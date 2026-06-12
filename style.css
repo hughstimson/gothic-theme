@@ -118,11 +118,11 @@ body {
 .post {
 	grid-column: 3 / 6;
 	display: grid;
-	/* meta | gap | post — the same three tracks as #main's columns 3-5 */
+	/* meta | gap | content — the same three tracks as #main's columns 3-5 */
 	grid-template-columns: var(--col-meta, 170px) var(--col-gap, 50px) minmax(0, 1fr);
 	align-items: start;
 	min-height: 120px;
-	margin-bottom: 90px;   /* per-post-block spacing, folded from the old .post */
+	margin-bottom: 90px;
 	}
 
 .post > * {
@@ -641,13 +641,13 @@ blockquote p {
 	}
 
 /* each comment block keeps the min-height + spacing the post wrapper carries
-   (the wrapper's own copy lives in the .post-and-metadata rule above) */
+   (the wrapper's own copy lives in the .post rule above) */
 .comment-and-reply {
 	min-height: 120px;
 	margin-bottom: 90px;
 	}
 
-/* the comment list reuses .post-and-metadata for its grid but is a container,
+/* the comment list reuses .post for its grid but is a container,
    not a single block, so it skips the per-block bottom margin */
 .comment-list {
 	margin-bottom: 0;
@@ -735,7 +735,7 @@ ul.topics a:hover {
 
 /* comments thread ----------------------------------------------- */
 
-/* let the comment blocks join the row grid */
+/* let the comment blocks join the #main grid */
 .comment-thread {
 	display: contents;
 	}
@@ -935,7 +935,7 @@ table.radio-playlist td.radio-playlist-label {
 
 /* about --------------------------------------------------------- */
 
-/* the contact panel is the about page's metadata column (a .metadata,
+/* the contact panel is the about page's meta column (a .meta,
    so column placement, right-alignment and the narrow reflow come from
    the shared rules) */
 #contact p {
