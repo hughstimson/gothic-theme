@@ -10,7 +10,7 @@
 	</a>
 	<?php edit_comment_link( __( 'edit' ), ' ', '' ); ?>
 </div>
-<div class="post">
+<div class="comment-and-reply">
 	<div <?php comment_class( 'comment text', $comment ); ?> id="comment-<?php comment_ID(); ?>">
 		<div class="bar"> </div>
 		<?php if ( '0' === $comment->comment_approved ) : ?>

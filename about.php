@@ -14,7 +14,7 @@ Template Name: about
 <!--			<h1><a href="#flag">Flag</a></h1> -->
 		</div><!--page-nav-->
 	</div><!--sidebar-->
-	<div class="content-with-sidebar">
+	<div class="post-and-metadata">
 		<div class="metadata" id="contact">
 		<a href="http://hughstimson.org/photos/sprucelake/self+portrait+with+alpine.jpg.php" alt="mugshot" title="self portrait with alpine"><img src="<?php bloginfo('template_url'); ?>/images/alpineprofile.jpg" /></a>
 		<p><a href="mailto:hugh@hughstimson.org">hugh@hughstimson.org</a></p>
@@ -24,7 +24,7 @@ Template Name: about
 		Vancouver BC<br />
 		V6A 2C7</p>
 		</div><!--contact metadata-->
-		<div class="entry">
+		<div class="post">
 		<h2 id="blurb">Blurb</h2>
 		<div class="text">
 			<p>I'm an <a href="http://hughstimson.com">environmental GIS consultant</a> in Vancouver, Canada. I often collaborate with <a href="http://geomemes.com/">Geomemes Research</a> and <a href="http://mcallister-research.com/">McAllister Opinion Research</a>, and I'm interested in working with your gung-ho conservation organization.</p>

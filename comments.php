@@ -4,12 +4,12 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' === basename( $_SE
 }
 
 if ( post_password_required() ) : ?>
-	<p class="nocomments content-with-double-sidebar">This post is password protected. Enter the password to view comments.</p>
+	<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
 	<?php return; ?>
 <?php endif; ?>
 
 <?php if ( have_comments() ) : ?>
-	<h1 id="comments" class="content-with-double-sidebar"><?php comments_number( 'no comments', '1 comment:', '% comments:' ); ?></h1>
+	<h1 id="comments"><?php comments_number( 'no comments', '1 comment:', '% comments:' ); ?></h1>
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<div class="navigation">
@@ -18,7 +18,7 @@ if ( post_password_required() ) : ?>
 		</div>
 	<?php endif; ?>
 
-	<div class="content-with-sidebar comment-list">
+	<div class="post-and-metadata comment-list">
 		<?php
 		wp_list_comments( array(
 			'callback'     => 'gothic_comment',
@@ -36,7 +36,7 @@ if ( post_password_required() ) : ?>
 		</div>
 	<?php endif; ?>
 <?php elseif ( ! comments_open() ) : ?>
-	<p class="nocomments content-with-double-sidebar">Comments are closed.</p>
+	<p class="nocomments">Comments are closed.</p>
 <?php endif; ?>
 
 <?php
@@ -46,7 +46,7 @@ $required_attribute = $required ? ' required="required" aria-required="true"' : 
 $required_label     = $required ? ' (required)' : '';
 
 comment_form( array(
-	'class_container'     => 'comment-respond content-with-double-sidebar',
+	'class_container'     => 'comment-respond',
 	'title_reply'         => 'leave a comment',
 	'title_reply_to'      => 'leave a comment',
 	'title_reply_before'  => '<h1 id="reply-title" class="comment-reply-title">',

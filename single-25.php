@@ -5,7 +5,7 @@ Template Name: hotinhere-single
 get_header(); ?>
 <div class="row" id="radio-header">
 	<img id="hotinhere-staff" src="<?php bloginfo('template_url'); ?>/images/ihihstaff.jpg" />
-	<div class="content-with-double-sidebar">
+	<div id="radio-header-text">
 		<div id="radio-title">It's Hot In Here</div>
 		<h1><a href="http://wcbn.org">WCBN</a>'s environmental talk show</h1>
 		<p>
@@ -29,7 +29,7 @@ get_header(); ?>
 		<p>likewise</p>
 	</div><!--side-bar-->
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-				<div class="content-with-sidebar post" id="post-<?php the_ID(); ?>">
+				<div class="post-and-metadata" id="post-<?php the_ID(); ?>">
 					<div class="metadata">
 						<div class="bar"></div>
 						<div class="date">
@@ -48,7 +48,7 @@ get_header(); ?>
 							<?php edit_post_link('edit', '', ''); ?>
 						</div>
 					</div><!--metadata-->
-					<div class="entry">
+					<div class="post">
 						<h2>
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 						</h2>

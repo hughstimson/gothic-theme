@@ -17,7 +17,7 @@ if ( ! isset( $gothic_project_topic ) ) {
 	) );
 	 while (have_posts()) : the_post();
 	?>
-	<div class="content-with-sidebar project">
+	<div class="post-and-metadata project">
 		<?php the_post_thumbnail(); ?>
 		<div class="description">
 			<h2>
@@ -44,7 +44,7 @@ if ( ! isset( $gothic_project_topic ) ) {
 			</div><!--descrtiption-->
 		</div><!-- project -->
 	<?php endwhile; ?>
-	<div class="content-with-double-sidebar" id="posts-nav">
+	<div id="posts-nav">
 		<h1><?php posts_nav_link(' &#183; ', '&larr; newer projects', 'older projects &rarr;'); ?></h1>
 	</div>
 </div><!--row-->

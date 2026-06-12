@@ -15,7 +15,7 @@
     */ ?>
 	<?php query_posts($query_string . '&cat=-14,-25,-71'); ?>
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		<div class="content-with-sidebar post" id="post-<?php the_ID(); ?>">
+		<div class="post-and-metadata" id="post-<?php the_ID(); ?>">
 			<div class="metadata">
 				<div class="bar"></div>
 				<div class="date">
@@ -34,7 +34,7 @@
 					<?php edit_post_link('edit', '', ''); ?>
 				</div>
 			</div><!--metadata-->
-			<div class="entry">
+			<div class="post">
 				<h2>
 					<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 				</h2>
@@ -49,7 +49,7 @@
 		<p class="center">Sorry, but you are looking for something that isn't here.</p>
 		<!-- <?php include (TEMPLATEPATH . "/searchform.php"); ?> -->
 	<?php endif; ?>
-	<div class="content-with-double-sidebar" id="posts-nav">
+	<div id="posts-nav">
 		<h1><?php posts_nav_link(' &#183; ', '<span class="nav-arrow">&larr;</span> newer posts', 'older posts <span class="nav-arrow">&rarr;</span>'); ?></h1>
 	</div>
 </div><!--row-->

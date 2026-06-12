@@ -6,7 +6,7 @@ Template Name: mpb
 <?php get_header(); ?>
 <div class="row" id="radio-header">
 	<img id="hotinhere-staff" src="<?php bloginfo('template_url'); ?>/images/heroicshovel.jpg" />
-	<div class="content-with-double-sidebar">
+	<div id="radio-header-text">
 		<div id="radio-title">Mountain Pine Beats</div>
 		<h1>Music From the Clearcuts</h1>
 		<p>
@@ -28,7 +28,7 @@ Template Name: mpb
 	</div><!--side-bar-->
 	<?php query_posts('cat=28'); ?>	
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-				<div class="content-with-sidebar post" id="post-<?php the_ID(); ?>">
+				<div class="post-and-metadata" id="post-<?php the_ID(); ?>">
 					<div class="metadata">
 						<div class="bar"></div>
 						<div class="date">
@@ -41,7 +41,7 @@ Template Name: mpb
 							<?php edit_post_link('edit', '', ''); ?>
 						</div>
 					</div><!--metadata-->
-					<div class="entry radio">
+					<div class="post radio">
 						<h2>
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 						</h2>
@@ -56,7 +56,7 @@ Template Name: mpb
 		<p class="center">Sorry, but you are looking for something that isn't here.</p>
 		<!-- <?php include (TEMPLATEPATH . "/searchform.php"); ?> -->
 	<?php endif; ?>
-	<div class="content-with-double-sidebar" id="posts-nav">
+	<div id="posts-nav">
 		<h1><?php posts_nav_link(' &#183; ', '&larr; newer posts', 'older posts &rarr;'); ?></h1>
 	</div>
 </div><!--row-->

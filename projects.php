@@ -24,7 +24,7 @@ Template Name: projects
 	query_posts('post_type=page&meta_key=topic&posts_per_page=-1'); 
 	 while (have_posts()) : the_post();
 	?>
-	<div class="content-with-sidebar project">
+	<div class="post-and-metadata project">
 		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 		<div class="description">
 			<h2>
@@ -51,7 +51,7 @@ Template Name: projects
 			</div><!--descrtiption-->
 		</div><!-- project -->	
 	<?php endwhile; ?>
-	<div class="content-with-double-sidebar" id="posts-nav">
+	<div id="posts-nav">
 		<h1><?php posts_nav_link(' &#183; ', '&larr; newer projects', 'older projects &rarr;'); ?></h1>
 	</div>
 </div><!--row-->

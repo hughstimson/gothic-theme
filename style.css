@@ -31,8 +31,19 @@ body {
 
 .row {
 	display: grid;
-	grid-template-columns: 50px 120px 170px 50px minmax(0, 1fr) 50px;
-	/* gutter | sidebar | metadata | gap | content | gutter */
+	/* Column widths. The metadata | gap | post sub-split is reused per post
+	   by .post-and-metadata, so both grids read these same variables; a width
+	   that collapses at a breakpoint is then changed in just one place below.
+	   Eventually this can be further simplified by implementing a nested grid,
+	   available in browsers since 2023. Keeping it backwards-compatible for now.
+	   */
+	--col-gutter: 50px;
+	--col-sidebar: 120px;
+	--col-meta: 170px;
+	--col-gap: 50px;
+	grid-template-columns:
+		var(--col-gutter) var(--col-sidebar) var(--col-meta) var(--col-gap) minmax(0, 1fr) var(--col-gutter);
+	/* gutter | sidebar | metadata | gap | post | gutter */
 	align-items: start;
 	max-width: 1070px;
 	margin: 0 auto;
@@ -51,7 +62,7 @@ body {
 	padding: 0 50px;
 	}
 
-/*  Catch-all so any unanticipated element in a row lands in the main content column
+/*  Catch-all so any unanticipated element in a row lands in the post column
     rather than breaking out into the gutter. */
 .row > * {
 	grid-column: 5 / 6;
@@ -66,42 +77,47 @@ body {
 	text-align: left;
 	}
 
-.content-with-sidebar {
+.post-and-metadata {
 	grid-column: 3 / 6;
 	display: grid;
-	grid-template-columns: 170px 50px minmax(0, 1fr);
-	/* metadata | gap | content */
+	grid-template-columns: var(--col-meta, 170px) var(--col-gap, 50px) minmax(0, 1fr);
+	/* metadata | gap | post — the same three tracks as the row's columns 3-5 */
 	align-items: start;
+	min-height: 120px;
+	margin-bottom: 90px;   /* per-post-block spacing, folded from the old .post */
 	}
 
-.content-with-sidebar > * {
+.post-and-metadata > * {
 	grid-column: 3;
 	}
 
-.content-with-sidebar > .metadata {
+.post-and-metadata > .metadata {
 	grid-column: 1;
 	}
 
-.content-with-double-sidebar {
+/* comment heading, form, and notices sit in the post column; they're inside
+   .comment-thread (display:contents) so the .row > * catch-all can't reach
+   them, hence the explicit placement */
+#comments,
+#respond,
+.nocomments {
 	grid-column: 5 / 6;
 	}
 
 /* Intermediate-width variant --------------------------------------- */
-/* Below the full layout's 1070px max the content column starts to
+/* Below the full layout's 1070px max the post column starts to
    shrink, so at this intermediate width drop the left sidebar and let
-   the metadata + content columns slide left into the freed space. The
-   content keeps its 50px right gutter, so its right edge stays aligned
+   the metadata + post columns slide left into the freed space. The
+   post column keeps its 50px right gutter, so its right edge stays aligned
    with the site links in the banner).
    */
 @media (max-width: 1070px) {
+	/* drop the left sidebar and narrow the metadata column into the freed
+	   space; both the row grid and the per-post .post-and-metadata grids
+	   follow, since they read these shared variables */
 	.row {
-		grid-template-columns: 50px 0 120px 50px minmax(0, 1fr) 50px;
-		/* gutter | (sidebar removed) | metadata | gap | content | gutter */
-		}
-
-	.row .content-with-sidebar {
-		grid-template-columns: 120px 50px minmax(0, 1fr);
-		/* metadata | gap | content */
+		--col-sidebar: 0px;
+		--col-meta: 120px;
 		}
 
 	.row .side-bar {
@@ -120,14 +136,15 @@ body {
 /* Narrow-width variant ------------------------------------------------- */
 /* At 870px and below the metadata leaves its column and becomes a single
    left-aligned horizontal row directly above each post's title, so the
-   content column can reach the left gutter (aligned with the banner icon).
+   post column can reach the left gutter (aligned with the banner icon).
    Self-contained, so it doesn't rely on the intermediate variant also
    being active.
    */
 @media (max-width: 870px) {
 	.row {
-		grid-template-columns: 50px 0 0 0 minmax(0, 1fr) 50px;
-		/* gutter | (sidebar) | (metadata) | (gap) | content | gutter */
+		--col-sidebar: 0px;
+		--col-meta: 0px;
+		--col-gap: 0px;
 		}
 
 	.row .side-bar {
@@ -135,7 +152,7 @@ body {
 		}
 
 	/* stack the metadata above the entry instead of beside it */
-	.row .content-with-sidebar {
+	.row .post-and-metadata {
 		display: block;
 		}
 
@@ -188,7 +205,7 @@ body {
 		}
 
 	#radio-header.row > #hotinhere-staff,
-	#radio-header.row > .content-with-double-sidebar {
+	#radio-header.row > #radio-header-text {
 		grid-column: 2 / 3;
 		}
 
@@ -574,19 +591,29 @@ blockquote p {
 	margin: 0 30px 15px 30px;
 	}
 
-.post .text {
+.post .text,
+.comment-and-reply .text {
 	margin-bottom: 0px;
 	}
 
-/* grid items form a BFC, so the last line's bottom margin no longer
-   collapses into .post's margin-bottom; drop it to keep spacing identical */
-.post .text > :last-child {
+/* grid items form a BFC, so the last line's bottom margin no longer collapses
+   into the block's margin-bottom; drop it to keep spacing identical */
+.post .text > :last-child,
+.comment-and-reply .text > :last-child {
 	margin-bottom: 0;
 	}
 
-.post {
+/* each comment block keeps the min-height + spacing the post wrapper carries
+   (the wrapper's own copy lives in the .post-and-metadata rule above) */
+.comment-and-reply {
 	min-height: 120px;
 	margin-bottom: 90px;
+	}
+
+/* the comment list reuses .post-and-metadata for its grid but is a container,
+   not a single block, so it skips the per-block bottom margin */
+.comment-list {
+	margin-bottom: 0;
 	}
 
 .image {
@@ -792,7 +819,7 @@ img#hotinhere-staff {
 	border: 1px solid darkgrey;
 	}
 
-#radio-header > .content-with-double-sidebar {
+#radio-header > #radio-header-text {
 	grid-column: 4 / 5;
 	}
 

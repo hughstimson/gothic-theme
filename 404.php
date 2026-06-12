@@ -3,7 +3,7 @@
 	<div class="side-bar">
 		<?php include (TEMPLATEPATH . '/searchform.php'); ?>
 	</div><!--side-bar-->
-	<div class="content-with-double-sidebar">
+	<div>
 		<h2>404</h2>
 		<div class="text">
 			<p><em>Sorry:</em> whatever you were looking for isn't there.</p> 

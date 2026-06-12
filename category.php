@@ -5,7 +5,7 @@
 			<p>showing posts in <span class="topics"><?php single_cat_title(); ?></span></p>
 	</div><!--side-bar-->
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-				<div class="content-with-sidebar post" id="post-<?php the_ID(); ?>">
+				<div class="post-and-metadata" id="post-<?php the_ID(); ?>">
 					<div class="metadata">
 						<div class="bar"></div>
 						<div class="date">
@@ -24,7 +24,7 @@
 							<?php edit_post_link('edit', '', ''); ?>
 						</div>
 					</div><!--metadata-->
-					<div class="entry">
+					<div class="post">
 						<h2>
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 						</h2>
@@ -39,7 +39,7 @@
 		<p class="center">Sorry, but you are looking for something that isn't here.</p>
 		<!-- <?php include (TEMPLATEPATH . "/searchform.php"); ?> -->
 		<?php endif; ?>
-			<div class="content-with-double-sidebar" id="posts-nav">
+			<div id="posts-nav">
 			<h1><?php posts_nav_link(' &#183; ', '&larr; newer posts', 'older posts &rarr;'); ?></h1>
 		</div>
 </div><!--row-->

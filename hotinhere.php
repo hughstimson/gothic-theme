@@ -5,7 +5,7 @@ Template Name: hotinhere
 get_header(); ?>
 <div class="row" id="radio-header">
 	<img id="hotinhere-staff" src="<?php bloginfo('template_url'); ?>/images/ihihstaff2.jpg" />
-	<div class="content-with-double-sidebar">
+	<div id="radio-header-text">
 		<div id="radio-title">It's Hot In Here</div>
 		<h1><a href="http://wcbn.org">WCBN</a>'s environmental talk show</h1>
 		<p>
@@ -30,7 +30,7 @@ get_header(); ?>
 	</div><!--side-bar-->
 	<?php query_posts('cat=25&posts_per_page=-1'); ?>	
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-				<div class="content-with-sidebar post" id="post-<?php the_ID(); ?>">
+				<div class="post-and-metadata" id="post-<?php the_ID(); ?>">
 					<div class="metadata">
 						<div class="bar"></div>
 						<div class="date">
@@ -43,7 +43,7 @@ get_header(); ?>
 							<?php edit_post_link('edit', '', ''); ?>
 						</div>
 					</div><!--metadata-->
-					<div class="entry radio">
+					<div class="post radio">
 						<h2>
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 						</h2>
@@ -58,7 +58,7 @@ get_header(); ?>
 		<p class="center">Sorry, but you are looking for something that isn't here.</p>
 		<!-- <?php include (TEMPLATEPATH . "/searchform.php"); ?> -->
 	<?php endif; ?>
-	<div class="content-with-double-sidebar" id="posts-nav">
+	<div id="posts-nav">
 		<h1><?php posts_nav_link(' &#183; ', '&larr; newer posts', 'older posts &rarr;'); ?></h1>
 	</div>
 </div><!--row-->
