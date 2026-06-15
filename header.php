@@ -27,7 +27,7 @@
 <body>
 <div id="banner">
 	<div id="hughstimsonorg">
-		<a href="<?php bloginfo('url'); ?>">
+		<a href="https://hughstimson.org">
 		<img width="63" height="32" src="<?php bloginfo('template_url'); ?>/images/flag.png" /><span id="hughstimson">hughStimson</span><span id="org">.org</span>
 		</a>
 	</div>
