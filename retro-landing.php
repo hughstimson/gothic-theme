@@ -12,7 +12,7 @@
     <p>
         <a href="https://mstdn.ca/@hughstimson" rel="me">mastodon</a> |
         <a href="twitter/">twitter archive</a> |
-        <a href="<?php bloginfo('url'); ?>/blog">weblog</a>
+        <a href="<?php bloginfo('url'); ?>/">weblog</a>
     </p>
 </div>
 

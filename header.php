@@ -35,7 +35,7 @@
 	<div id="site-nav">
 		<a
 			<?php if (is_home()) { echo " id=\"current\""; } ?>
-			href="<?php bloginfo('url'); ?>/blog">blog</a>
+			href="<?php bloginfo('url'); ?>/">blog</a>
 		<a
 			<?php if (is_page('radio')) { echo " id=\"current\""; } ?>
 			href="<?php bloginfo('url'); ?>/projects/radio">radio</a>

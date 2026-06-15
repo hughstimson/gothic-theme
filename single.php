@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div id="main">
 	<div class="sidebar">
-			<h1 class="back-link"><a href="<?php bloginfo('url'); ?>/blog"><span class="nav-arrow">&larr;</span>  blog</a></h1>
+			<h1 class="back-link"><a href="<?php bloginfo('url'); ?>/"><span class="nav-arrow">&larr;</span>  blog</a></h1>
 	</div><!--side-bar-->
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
 			<?php
